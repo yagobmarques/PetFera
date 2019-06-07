@@ -1,9 +1,9 @@
 /**
 * @file colors.h
 * @brief Atribui cores às constantes
-* @author Yago Beserra Marques
-* @since 31/05/2019
-* @date 31/05/2019
+* @author Felipe Rodrigues
+* @since 23/04/2019
+* @date 01/05/2019
 */
 #ifndef COLORS_H
 #define COLORS_H
