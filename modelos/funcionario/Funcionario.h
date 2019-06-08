@@ -24,35 +24,19 @@ class Funcionario{
         Funcionario();
         Funcionario(string nome, double salario, Data dataAdmissao);       
         ~Funcionario();
-        string getNome(){
-            return this->nome;
-        };
-        void setNome(string nome){
-            this->nome = nome;
-        };
-        double getSalario(){
-            return this->salario;
-        };
-        void setSalario(double salario){
-            this->salario = salario;
-        };
-        Data getDataAdmissao(){            
-            return this->dataAdmissao;
-        };
-        void setDataAdmissao(Data dataAdmissao){
-            this->dataAdmissao = dataAdmissao;
-        };
-        string getNomeEmpresa(){
-            return this->nomeEmpresa;
-        }
-        void setNomeEmpresa(string nomeEmpresa){
-            this->nomeEmpresa = nomeEmpresa;
-        }        
+        string getNome();
+        void setNome(string nome);
+        double getSalario();
+        void setSalario(double salario);
+        Data getDataAdmissao();
+        void setDataAdmissao(Data dataAdmissao);
+        string getNomeEmpresa();
+        void setNomeEmpresa(string nomeEmpresa);       
 
         //sobrecarga de operadores:
+
         Funcionario& operator= (Funcionario const &f);
-        friend ostream& operator<< (ostream &o, Funcionario const f);
-       
+        friend ostream& operator<< (ostream &o, Funcionario const f);       
 };
 
 #endif
