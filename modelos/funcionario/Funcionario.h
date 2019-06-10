@@ -16,23 +16,17 @@ using namespace std;
 
 class Funcionario{
     private:
-        string nome;
-        double salario;
-        Data dataAdmissao;
-        string nomeEmpresa;
+        int m_id;
+        string m_nome;
+        string m_cpf;
+        short m_idade;
+        shot m_tipo_sanguineo;
+        char m_fator_rh;
+        string m_especialidade;
     public:          
         Funcionario();
-        Funcionario(string nome, double salario, Data dataAdmissao);       
         ~Funcionario();
-        string getNome();
-        void setNome(string nome);
-        double getSalario();
-        void setSalario(double salario);
-        Data getDataAdmissao();
-        void setDataAdmissao(Data dataAdmissao);
-        string getNomeEmpresa();
-        void setNomeEmpresa(string nomeEmpresa);       
-
+            
         //sobrecarga de operadores:
 
         Funcionario& operator= (Funcionario const &f);
