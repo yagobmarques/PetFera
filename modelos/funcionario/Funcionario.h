@@ -20,12 +20,30 @@ class Funcionario{
         string m_nome;
         string m_cpf;
         short m_idade;
-        shot m_tipo_sanguineo;
+        short m_tipo_sanguineo;
         char m_fator_rh;
         string m_especialidade;
     public:          
         Funcionario();
         ~Funcionario();
+        void SetEspecialidade(string especialidade);
+        void SetFator_rh(char fator_rh);
+        char GetFator_rh();
+        void SetTipo_sanguineo(short tipo_sanguineo);
+        short GetTipo_sanguineo();
+        void SetIdade(short idade);
+        short GetIdade();
+        void SetCpf(string cpf);
+        string GetCpf();  
+        void SetNome(string nome); 
+        string GetNome();  
+        void SetId(int id); 
+        int GetId();  
+
+    
+     
+
+
             
         //sobrecarga de operadores:
 

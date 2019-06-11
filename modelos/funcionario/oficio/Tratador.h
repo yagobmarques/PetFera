@@ -19,6 +19,9 @@ class Tratador : public Funcionario{
     public:          
         Tratador();
         ~Tratador();
+        void SetNivel_de_segurança(int nivel_de_segurança);
+        int GetNivel_de_segurança() const;
+        
             
         //sobrecarga de operadores:     
 };
