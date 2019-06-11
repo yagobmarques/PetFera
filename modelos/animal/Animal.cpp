@@ -1,85 +1,91 @@
 #include "Animal.h"
 
-void Animal::SetVeterinario(Veterinario vet){
-    m_veterinario = vet;
+int Animal::getM_id()
+{
+    return this->m_id;
 }
 
-void Animal::SetNome_batismo(string nome_batismo) 
+void Animal::setM_id(int m_id)
 {
-    m_nome_batismo = nome_batismo;
+    this->m_id = m_id;
 }
 
-string Animal::GetNome_batismo()  
+string Animal::getM_classe()
 {
-    return m_nome_batismo;
+    return this->m_classe;
 }
 
-void Animal::SetTratador(Tratador tratador) 
+void Animal::setM_classe(string m_classe)
 {
-    m_tratador = tratador;
+    this->m_classe = m_classe;
 }
 
-Tratador Animal::GetTratador()  
+string Animal::getM_nome_cientifico()
 {
-    return m_tratador;
+    return this->m_nome_cientifico;
 }
 
-void Animal::SetDieta(string dieta) 
+void Animal::setM_nome_cientifico(string m_nome_cientifico)
 {
-    m_dieta = dieta;
+    this->m_nome_cientifico = m_nome_cientifico;
 }
 
-string Animal::GetDieta()  
+char Animal::getM_sexo()
 {
-    return m_dieta;
+    return this->m_sexo;
 }
 
-void Animal::SetTamanho(double tamanho) 
+void Animal::setM_sexo(char m_sexo)
 {
-    m_tamanho = tamanho;
+    this->m_sexo = m_sexo;
 }
 
-double Animal::GetTamanho()  
+double Animal::getM_tamanho()
 {
-    return m_tamanho;
+    return this->m_tamanho;
 }
 
-void Animal::SetSexo(char sexo) 
+void Animal::setM_tamanho(double m_tamanho)
 {
-    m_sexo = sexo;
+    this->m_tamanho = m_tamanho;
 }
 
-char Animal::GetSexo()  
+string Animal::getM_dieta()
 {
-    return m_sexo;
+    return this->m_dieta;
 }
 
-void Animal::SetNome_cientifico(string nome_cientifico) 
+void Animal::setM_dieta(string m_dieta)
 {
-    m_nome_cientifico = nome_cientifico;
+    this->m_dieta = m_dieta;
 }
 
-string Animal::GetNome_cientifico()  
+Veterinario Animal::getM_veterinario()
 {
-    return m_nome_cientifico;
+    return this->m_veterinario;
 }
 
-void Animal::SetClasse(string classe) 
+void Animal::setM_veterinario(Veterinario m_veterinario)
 {
-    m_classe = classe;
+    this->m_veterinario = m_veterinario;
 }
 
-string Animal::GetClasse()  
+Tratador Animal::getM_Tratador()
 {
-    return m_classe;
+    return this->m_tratador;
 }
 
-void Animal::SetId(int id) 
+void Animal::setM_tratador(Tratador m_tratador)
 {
-    m_id = id;
+    this-> m_tratador ;
 }
 
-int Animal::GetId()  
+string Animal::getM_nome_batismo()
 {
-    return m_id;
+    return this->m_nome_batismo;
+}
+
+void Animal::setM_nome_batismo(string m_nome_batismo)
+{
+    this->m_nome_batismo = m_nome_batismo;
 }

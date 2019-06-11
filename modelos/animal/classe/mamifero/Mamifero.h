@@ -16,11 +16,12 @@ using namespace std;
 
 class Mamifero : public Animal{
     private:
-        string m_cor_pelo;
-        
+        string m_cor_pelo;    
     public:          
         Mamifero();
         ~Mamifero();
+        string Mamifero::getM_cor_pelo();
+        void Mamifero::setM_cor_pelo(string m_cor_pelo);
         //sobrecarga de operadores:     
 };
 #endif
