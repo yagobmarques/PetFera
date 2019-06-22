@@ -49,7 +49,8 @@ public:
     void setM_tratador(Tratador m_tratador);
     string getM_nome_batismo();
     void setM_nome_batismo(string m_nome_batismo);
+    friend ostream& operator<< (ostream &o, Animal const a); 
 
-    //sobrecarga de operadores:
-};
+
+
 #endif

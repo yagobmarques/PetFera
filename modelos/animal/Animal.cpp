@@ -1,4 +1,7 @@
 #include "Animal.h"
+ ostream& operator<< (ostream &o, Animal const a){
+    o<<" id: "<<a.getM_id<<"| Classe: "<<a.getM_classe<<"| Nome cientifico: "<<a.getM_nome_cientifico<<"| Sexo: "<<a.getM_sexo<<"| Tamanho: "<<a.getM_tamanho<<"| Dieta: "<<a.getM_dieta<<"| Veterinario: "<<a.getM_veterinario<<"| Tratador: "<<a.getM_Tratador<<"| Nome de batismo: "<<a.getM_nome_batismo<<endl; 
+}
 
 int Animal::getM_id()
 {
