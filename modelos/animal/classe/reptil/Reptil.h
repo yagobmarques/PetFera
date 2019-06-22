@@ -18,10 +18,14 @@ class Reptil : public Animal{
     private:
         bool m_venenoso;
         string m_tipo_veneno;
-        
+
     public:          
         Reptil();
         ~Reptil();
+        bool Reptil::getM_venenoso();
+        void Reptil::setM_venenoso(bool m_venenoso);
+        string Reptil::getM_tipo_veneno();
+        void Reptil::setM_tipo_veneno(string m_tipo_veneno);
         //sobrecarga de operadores:     
 };
 #endif

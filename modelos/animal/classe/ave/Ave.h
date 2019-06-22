@@ -18,10 +18,15 @@ class Ave : public Animal{
     private:
         double m_tamanho_do_bico_cm;
         double m_envergadura_das_asas;
-        
+
     public:          
         Ave();
         ~Ave();
+        double Ave::getM_tamanho_do_bico_cm();
+        void Ave::setM_tamanho_do_bico_cm(double m_tamanho_do_bico_cm);
+        double Ave::getM_envergadura_das_asas();
+        void Ave::setM_envergadura_das_asas(double m_envergadura_das_asas);
+        
         //sobrecarga de operadores:     
 };
 #endif

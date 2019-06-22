@@ -13,13 +13,14 @@
 #include "../Funcionario.h"
 using namespace std;
 
-class Tratador : public Funcionario{
+class Veterinario : public Funcionario{
     private:
         string m_crmv;
     public:          
         Veterinario();
         ~Veterinario();
-            
+        string getM_crmv();
+        void setM_crmv(string m_crmv);
         //sobrecarga de operadores:     
 };
 #endif
