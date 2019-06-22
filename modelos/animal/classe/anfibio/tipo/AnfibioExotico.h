@@ -5,8 +5,8 @@ class AnfibioExotico : public Anfibio{
     private:
 
     public:
-     Anfibio();
-    ~Anfibio();
+     AnfibioExotico();
+    ~AnfibioExotico();
     //sobrecarga de operadores caso precise aqui em baixo
 };
 #endif

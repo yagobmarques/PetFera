@@ -50,6 +50,24 @@ public:
     string getM_nome_batismo();
     void setM_nome_batismo(string m_nome_batismo);
 
-    //sobrecarga de operadores:
+
+class Animal{
+    private:
+        int m_id;
+        string m_classe;
+        string m_nome_cientifico;
+        char m_sexo;
+        double m_tamanho;
+        string m_dieta;
+        Veterinario m_veterinario;
+        Tratador m_tratador;
+        string m_nome_batismo;
+    public:          
+        Animal();
+        ~Animal();
+            
+        //sobrecarga de operadores:
+        friend ostream& operator<< (ostream &o, Animal const a);     
+    
 };
 #endif

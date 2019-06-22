@@ -1,4 +1,7 @@
 #include "Animal.h"
+ ostream& operator<< (ostream &o, Animal const a){
+     o<<
+}
 
 int Animal::getM_id()
 {
