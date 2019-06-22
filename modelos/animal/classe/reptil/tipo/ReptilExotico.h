@@ -6,8 +6,8 @@ class ReptilExotico : public Reptil{
         string m_tipo_veneno;
         
     public:          
-        Reptil();
-        ~Reptil();
+        ReptilExotico();
+        ~ReptilExotico();
         //sobrecarga de operadores:     
 };
 #endif

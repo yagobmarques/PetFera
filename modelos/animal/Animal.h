@@ -28,6 +28,7 @@ class Animal{
         Animal();
         ~Animal();
             
-        //sobrecarga de operadores:     
+        //sobrecarga de operadores:
+        friend ostream& operator<< (ostream &o, Animal const a);     
 };
 #endif
