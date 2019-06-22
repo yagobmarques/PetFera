@@ -6,8 +6,8 @@
 * @date 01/05/2019
 */
 #include "main.h"
-using namespace std;
 int main (int argc, char *argv[]) {  
-    iniciarMenu();
+    Menu menu = new Menu();
+	menu->menuInicial();
     return 0;
 }
