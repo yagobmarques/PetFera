@@ -21,72 +21,70 @@ all:
 main.o:
 	$(CC) $(FLAGS) -c main.cpp
 
-Animal.o: Animal.h
-	$(CC) $(FLAGS) -c Animal.cpp
+Animal.o: Animal.h data.h Veterinario.h Tratador.h   
+	$(CC) $(FLAGS) -c $(ANIMAL_PATH)/Animal.cpp  
 
-AnimalExotico.o: AnimalExotico.h
+AnimalExotico.o: AnimalExotico.h AnimalExotico.cpp
 	$(CC) $(FLAGS) -c AnimalExotico.cpp
 
-AnimalNativo.o: AnimalNativo.h
+AnimalNativo.o: AnimalNativo.h animalNativo.cpp
 	$(CC) $(FLAGS) -c AnimalNativo.cpp
 
-AnimalSilvestre.o: AnimalSilvestre.h
+AnimalSilvestre.o: AnimalSilvestre.h Animal.h AnimalSilvestre.cpp
 	$(CC) $(FLAGS) -c AnimalSilvestre.cpp
 
-Anfibio.o: Anfibio.h
-	$(CC) $(FLAGS) -c Anfibio.cpp
+Anfibio.o: Anfibio.h Animal.h Anfibio.cpp
+	$(CC) $(FLAGS) -c Anfibio.cpp Animal.cpp
 
-AnfibioExotico.o: AnfibioExotico.h
+AnfibioExotico.o: AnfibioExotico.h AnfibioExotico.cpp Anfibio.h
 	$(CC) $(FLAGS) -c AnfibioExotico.cpp
 
-AnfibioNativo.o: AnfibioNativo.h
+AnfibioNativo.o: AnfibioNativo.h AnfibioNativo.cpp Anfibio.h
 	$(CC) $(FLAGS) -c AnfibioNativo.cpp
 
-Ave.o: Ave.h
-	$(CC) $(FLAGS) -c Ave
+Ave.o: Ave.h Animal.h
+	$(CC) $(FLAGS) -c Ave.cpp
 
-AveExotica.o: AveExotica.h
+AveExotica.o: AveExotica.h AveExotica.cpp Ave.h
 	$(CC) $(FLAGS) -c AveExotica.cpp
 
-AveNativa.o: AveNativa.h
+AveNativa.o: AveNativa.h AveNativa.cpp Ave.h
 	$(CC) $(FLAGS) -c AveNativa.cpp
 
-Mamifero.o: Mamifero.h
+Mamifero.o: Mamifero.h Mamifero.cpp Animal.h
 	$(CC) $(FLAGS) -c Mamifero.cpp
 
-MamiferoExotico.o: MamiferoExotico.h
+MamiferoExotico.o: MamiferoExotico.h MamiferoExotico.cpp Mamifero.h
 	$(CC) $(FLAGS) -c MamiferoExotico.cpp
 
-MamiferoNativo.o: MamiferoNativo.h
+MamiferoNativo.o: MamiferoNativo.h MamiferoNativo.cpp Mamifero.h
 	$(CC) $(FLAGS) -c MamiferoNativo.cpp
 
-MamiferoNativo.o: MamiferoNativo.h
-	$(CC) $(FLAGS) -c MamiferoNativo.cpp
-
-Reptil.o: Reptil.h
+Reptil.o: Reptil.h Animal.h reptil.cpp
 	$(CC) $(FLAGS) -c Reptil.cpp
 
-ReptilExotico.o: ReptilExotico.h
+ReptilExotico.o: ReptilExotico.h ReptilExotico.cpp Reptil.h
 	$(CC) $(FLAGS) -c ReptilExotico.cpp
 
-ReptilNativo.o: ReptilNativo.h
+ReptilNativo.o: ReptilNativo.h ReptilNativo.cpp Reptil.h
 	$(CC) $(FLAGS) -c ReptilNativo.cpp
 
-Tratador.o: Tratador.h
-	$(CC) $(FLAGS) -c Tratador.cpp
+Tratador.o: Tratador.h Tratador.cpp Funcionario.h 
+	$(CC) $(FLAGS) -c Tratador.cpp 
 
-Veterinario.o: Veterinario.h
+Veterinario.o: Veterinario.h Veterinario.cpp Funcionario.h
 	$(CC) $(FLAGS) -c Veterinario.cpp
 
-	
-menu.o:
+Sistema.o: Sistema.h data.h Sistema.cpp Veterinario.h Tratador.h
+	$(CC) $(FLAGS) -c Sistema.cpp 
+menu.o: menu.h menu.cpp Animal.h
 	$(CC) $(FLAGS) -c $(MENU_PATH)/menu.cpp
 
 
-funcionario.o: Funcionario.h
+funcionario.o: Funcionario.h Funcionario.cpp data.h
 	$(CC) $(FLAGS) -c Funcionario.cpp
 	
-data.o:
+data.o: data.cpp data.h
 	$(CC) $(FLAGS) -c $(DATA_PATH)/data.cpp
 
 animal-crud.o: animal-crud.h
@@ -101,8 +99,7 @@ dataUtil.o: data.o
 stringUtil.o:
 	$(CC) $(FLAGS) -c $(UTILS_PATH)/stringUtil.cpp
 
-animal.o:
-	$(CC) $(FLAGS) -c $(ANIMAL_PATH)/Animal.cpp
+
 
 
 
