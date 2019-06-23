@@ -1,11 +1,15 @@
 PROG = cpp_crud
 CC = g++ -std=c++11
 FLAGS = -O -g -Wall
+
 OBJS =  main.o menu.o  Funcionario.o animal-crud.o funcionario-crud.o data.o dataUtil.o stringUtil.o Animal.o AnimalExotico.o AnimalNativo.o AnimalSilvestre.o Anfibio.o AnfibioExotico.o AnfibioNativo.o Ave.o AveExotica.o AveNativa.o Mamifero.o MamiferoExotico.o MamiferoNativo.o Reptil.o ReptilExotico.o ReptilNativo.o  Tratador.o veterinario.o 
 MENU_PATH = ./telas/menu
 ANIMAL-CRUD_PATH = ./telas/animal-crud
 FUNCIONARIO-CRUD_PATH = ./telas/funcionario-crud
 DATA_PATH = ./modelos/data
+ANIMAL_PATH = ./modelos/animal
+
+
 UTILS_PATH = ./utils
 
 $(PROG):$(OBJS)				
@@ -52,24 +56,32 @@ Mamifero.o: Mamifero.h
 
 MamiferoExotico.o: MamiferoExotico.h
 	$(CC) $(FLAGS) -c MamiferoExotico.cpp
+
 MamiferoNativo.o: MamiferoNativo.h
 	$(CC) $(FLAGS) -c MamiferoNativo.cpp
+
 MamiferoNativo.o: MamiferoNativo.h
 	$(CC) $(FLAGS) -c MamiferoNativo.cpp
+
 Reptil.o: Reptil.h
 	$(CC) $(FLAGS) -c Reptil.cpp
+
 ReptilExotico.o: ReptilExotico.h
 	$(CC) $(FLAGS) -c ReptilExotico.cpp
+
 ReptilNativo.o: ReptilNativo.h
 	$(CC) $(FLAGS) -c ReptilNativo.cpp
+
 Tratador.o: Tratador.h
 	$(CC) $(FLAGS) -c Tratador.cpp
+
 Veterinario.o: Veterinario.h
 	$(CC) $(FLAGS) -c Veterinario.cpp
 
 	
-menu.o: stringUtil.o
+menu.o:
 	$(CC) $(FLAGS) -c $(MENU_PATH)/menu.cpp
+
 
 funcionario.o: Funcionario.h
 	$(CC) $(FLAGS) -c Funcionario.cpp
@@ -88,6 +100,11 @@ dataUtil.o: data.o
 
 stringUtil.o:
 	$(CC) $(FLAGS) -c $(UTILS_PATH)/stringUtil.cpp
+
+animal.o:
+	$(CC) $(FLAGS) -c $(ANIMAL_PATH)/Animal.cpp
+
+
 
 
 cls:
