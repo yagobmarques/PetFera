@@ -12,9 +12,9 @@ using namespace std;
 
 #include <iostream>
 #include <string>
-#include "../data/data.h"
-#include "../funcionario/oficio/Veterinario.h"
-#include "../funcionario/oficio/Tratador.h"
+#include "./data.h"
+#include "./Veterinario.h"
+#include "./Tratador.h"
 class Animal
 {
 private:
