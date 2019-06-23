@@ -1,4 +1,4 @@
-#include "Funcionario.h"
+#include "../includes/Funcionario.h"
 
 int Funcionario::getM_id()
 {
@@ -48,13 +48,13 @@ void Funcionario::setM_idade(short m_idade)
 }
 
 
-short Funcionario::getM_tipo_sanguineo()
+string Funcionario::getM_tipo_sanguineo()
 {
     return this->m_tipo_sanguineo;
 }
 
 
-void Funcionario::setM_tipo_sanguineo(short m_tipo_sanguineo)
+void Funcionario::setM_tipo_sanguineo(string m_tipo_sanguineo)
 {
     this->m_tipo_sanguineo = m_tipo_sanguineo;
 }
@@ -81,4 +81,16 @@ string Funcionario::getM_especialidade()
 void Funcionario::setM_especialidade(string m_especialidade)
 {
     this->m_especialidade = m_especialidade;
+}
+Funcionario::Funcionario(){
+
+}
+Funcionario::~Funcionario(){
+
+}
+void Funcionario::setM_funcao(string m_funcao){
+  this->m_funcao = m_funcao;
+}
+string Funcionario::getM_funcao(){
+  return this->m_funcao;
 }

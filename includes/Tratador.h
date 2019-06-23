@@ -10,17 +10,17 @@
 
 #include <iostream>
 #include <string>
-#include "../Funcionario.h"
+#include "./Funcionario.h"
 using namespace std;
 
 class Tratador : public Funcionario {
     private:
-        int m_nivel_de_seguranca;
+        int m_nivel_de_segurança;
     public:          
         Tratador();
         ~Tratador();
-        void SetNivel_de_seguranca(int m_nivel_de_seguranca);
-        int GetNivel_de_seguranca();
+        void SetNivel_de_segurança(int m_nivel_de_segurança);
+        int GetNivel_de_segurança();
         
             
         //sobrecarga de operadores:     

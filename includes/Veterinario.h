@@ -10,7 +10,8 @@
 
 #include <iostream>
 #include <string>
-#include "../Funcionario.h"
+#include "./Funcionario.h"
+
 using namespace std;
 
 class Veterinario : public Funcionario{

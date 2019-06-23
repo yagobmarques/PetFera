@@ -1,11 +1,17 @@
-#include "Tratador.h"
+#include "../includes/Tratador.h"
 
-void Tratador::SetNivel_de_seguranca(int nivel_de_seguranca)
+void Tratador::SetNivel_de_segurança(int nivel_de_segurança)
 {
-    m_nivel_de_seguranca = nivel_de_seguranca;
+    m_nivel_de_segurança = nivel_de_segurança;
 }
 
-int Tratador::GetNivel_de_seguranca()
+int Tratador::GetNivel_de_segurança()
 {
-    return this->m_nivel_de_seguranca;
+    return this->m_nivel_de_segurança;
+}
+Tratador::Tratador(){
+
+}
+Tratador::~Tratador(){
+  
 }
