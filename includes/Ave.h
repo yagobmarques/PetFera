@@ -22,10 +22,10 @@ class Ave : public Animal{
     public:          
         Ave();
         ~Ave();
-        double Ave::getM_tamanho_do_bico_cm();
-        void Ave::setM_tamanho_do_bico_cm(double m_tamanho_do_bico_cm);
-        double Ave::getM_envergadura_das_asas();
-        void Ave::setM_envergadura_das_asas(double m_envergadura_das_asas);
+        double getM_tamanho_do_bico_cm();
+        void setM_tamanho_do_bico_cm(double m_tamanho_do_bico_cm);
+        double getM_envergadura_das_asas();
+        void setM_envergadura_das_asas(double m_envergadura_das_asas);
         
         //sobrecarga de operadores:     
 };

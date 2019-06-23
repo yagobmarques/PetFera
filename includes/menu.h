@@ -15,8 +15,8 @@
 #include <map>
 #include <vector>
 #include "Animal.h"
-using namespace std
-Class Menu{
+using namespace std;
+	class Menu{
 	private:
 	map<int, Animal> animais;
 	public:

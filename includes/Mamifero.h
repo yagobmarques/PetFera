@@ -20,8 +20,8 @@ class Mamifero : public Animal{
     public:          
         Mamifero();
         ~Mamifero();
-        string Mamifero::getM_cor_pelo();
-        void Mamifero::setM_cor_pelo(string m_cor_pelo);
+        string getM_cor_pelo();
+        void setM_cor_pelo(string m_cor_pelo);
         //sobrecarga de operadores:     
 };
 #endif
