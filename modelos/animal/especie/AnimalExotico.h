@@ -9,6 +9,8 @@ private:
 public:
     AnimalExotico();
     ~AnimalExotico();
+    string GetM_pais_origem();
+    void SetM_pais_origem(string a);
 //sobrecarga aqui caso nessesario:
 
 
