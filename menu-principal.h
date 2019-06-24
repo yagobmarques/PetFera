@@ -15,7 +15,6 @@
 #include "./includes/Sistema.h"
 #include "./utils/stringUtil.h"
 #include "./utils/colors.h"
-
 using namespace std;
 int escolherOpcao();
 
