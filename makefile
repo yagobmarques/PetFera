@@ -1,9 +1,9 @@
-PROG = cpp_crud
+PROG = petfera
 CC = g++ -std=c++11
 FLAGS = -O -g -Wall
 
-OBJS =  main.o  Funcionario.o Tratador.o Veterinario.o data.o menu.o
-ANIMAIS = Animal.o AnimalExotico.o AnimalNativo.o AnimalSilvestre.o Anfibio.o AnfibioExotico.o AnfibioNativo.o Ave.o AveExotica.o AveNativa.o Mamifero.o MamiferoExotico.o MamiferoNativo.o Reptil.o ReptilExotico.o ReptilNativo.o  
+OBJS =  main.o  Funcionario.o Tratador.o Veterinario.o data.o menu.o Animal.o AnimalExotico.o AnimalNativo.o AnimalSilvestre.o Anfibio.o AnfibioExotico.o AnfibioNativo.o Ave.o AveExotica.o AveNativa.o Mamifero.o MamiferoExotico.o MamiferoNativo.o Reptil.o ReptilExotico.o ReptilNativo.o  
+
 MENU_PATH = ./telas/menu
 ANIMAL-CRUD_PATH = ./telas/animal-crud
 FUNCIONARIO-CRUD_PATH = ./telas/funcionario-crud
@@ -14,7 +14,7 @@ ANIMAL_PATH = ./modelos/animal
 UTILS_PATH = ./utils
 
 $(PROG):$(OBJS)				
-		$(CC) -o $(PROG) $(OBJS) $(ANIMAIS)
+		$(CC) -o $(PROG) $(OBJS) 
 		rm -f *.o
 		./$(PROG)
 all:
@@ -79,15 +79,12 @@ Veterinario.o:
 Sistema.o: 
 	$(CC) $(FLAGS) -c ./src/Sistema.cpp 
 
-# menu.o: menu.h menu.cpp Animal.h
-# 	$(CC) $(FLAGS) -c ./src/$(MENU_PATH)/menu.cpp
-
 Funcionario.o:
 	$(CC) $(FLAGS) -c ./src/Funcionario.cpp
 data.o: 
 	$(CC) $(FLAGS) -c ./src/data.cpp
 menu.o: 
-	$(CC) $(FLAGS) -c ./src/menu.cpp
+	$(CC) $(FLAGS) -c ./menu.cpp
 
 cls:
 	rm -f $(PROG) $(OBJS)

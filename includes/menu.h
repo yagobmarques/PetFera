@@ -28,7 +28,7 @@ class Menu{
 	map<int, Tratador> tratadores;
 	public:
 	void iniciarMenu();
-	void carregarDados(string arquivoAnimais, string arquivoFuncionarios);
+	void carregarDados();
 	void cadastrarVeterinario();
 	void salvarVeterinario();
 	void salvarTratador();
