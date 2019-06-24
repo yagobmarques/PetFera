@@ -48,13 +48,13 @@ void Funcionario::setM_idade(short m_idade)
 }
 
 
-short Funcionario::getM_tipo_sanguineo()
+string Funcionario::getM_tipo_sanguineo()
 {
     return this->m_tipo_sanguineo;
 }
 
 
-void Funcionario::setM_tipo_sanguineo(short m_tipo_sanguineo)
+void Funcionario::setM_tipo_sanguineo(string m_tipo_sanguineo)
 {
     this->m_tipo_sanguineo = m_tipo_sanguineo;
 }
@@ -81,4 +81,14 @@ string Funcionario::getM_especialidade()
 void Funcionario::setM_especialidade(string m_especialidade)
 {
     this->m_especialidade = m_especialidade;
+}
+Funcionario& Funcionario::operator=(const Funcionario& f ){
+	m_id=f.m_id;
+	m_nome=f.m_nome;
+	m_cpf=f.m_cpf;
+	m_idade=f.m_idade;
+	m_tipo_sanguineo=f.m_tipo_sanguineo;
+	m_fator_rh=f.m_fator_rh;
+	m_especialidade=f.m_especialidade;
+	return *this;
 }
