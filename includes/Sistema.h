@@ -17,9 +17,15 @@ using namespace std;
 #include "Tratador.h"
 #include <fstream>
 #include <cstdio>
+
+#include <map>
+#include "Animal.h"
+#include<sstream>
+#include <stdlib.h>
+
 class Sistema{
 private:
-    
+
 public:
     Sistema();
     ~Sistema();
@@ -32,6 +38,8 @@ public:
     void remover_FuncionarioById(int id);   
     void alterar_Funcionario();
     int verificarID(int id);
+
+    
     //sobrecarga de operadores:
 };
 #endif

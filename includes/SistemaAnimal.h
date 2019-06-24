@@ -1,4 +1,5 @@
-/**
+/*
+*
 * @file SistemaAnimal.h
 * @brief Domínio de SistemaAnimal
 * @author Rodolfo Dantas de Oliveira 
@@ -12,26 +13,34 @@ using namespace std;
 
 #include <iostream>
 #include <string>
-#include "data.h"
-#include "Animal.h"
+#include "Veterinario.h"
+#include "Tratador.h"
 #include <fstream>
 #include <cstdio>
+
+#include <map>
+#include "Animal.h"
+#include<sstream>
+#include <stdlib.h>
+
 class SistemaAnimal{
 private:
-    
+    map<int, Animal> animais;
+	map<int, Veterinario> veterinarios;
+	map<int, Tratador> tratadores;
 public:
     SistemaAnimal();
     ~SistemaAnimal();
-    void cadastrar_Animal();
-    void alterar_Animal();
-    void remover_Animal();
-    void listar_Animal();
-    void remover_AnimalById(int m_id);   
-    int verificar_animalID(int m_id);
-    void cadastrar_Ave();
-    void cadastrar_Reptil();
-    void cadastrar_Mamifero();
-    void cadastrar_Anfibio();
-    //sobrecarga de operadores:
+
+    void carregarDados();
+    void cadastrarAnimal();
+    void salvarAlteracao();
+    void alterarDados(int id, Animal a);
+    void listarAnimais();
+    void consultar_animal_por_classe(string classe);
+    void consultar_animal_por_tratador(int id_tratador);
+    void consultar_animal_por_veterinario(int id_veterinario);
+    Veterinario getVeterinario_por_id(int id);
+	Tratador getTratador_por_id(int id);
 };
 #endif
