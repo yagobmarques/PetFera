@@ -15,12 +15,12 @@ using namespace std;
 
 class Tratador : public Funcionario {
     private:
-        int m_nivel_de_segurança;
+        int m_nivel_de_seguranca;
     public:          
         Tratador();
         ~Tratador();
-        void SetNivel_de_segurança(int m_nivel_de_segurança);
-        int GetNivel_de_segurança();
+        void SetNivel_de_seguranca(int m_nivel_de_seguranca);
+        int GetNivel_de_seguranca();
         
             
         //sobrecarga de operadores:     

@@ -7,7 +7,7 @@
 */
 #include "main.h"
 int main (int argc, char *argv[]) {  
-    Menu menu = new Menu();
-	menu->menuInicial();
+    Menu *menu = new Menu();
+	menu->iniciarMenu();
     return 0;
 }
