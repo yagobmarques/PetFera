@@ -41,7 +41,7 @@ void iniciarMenu(){
             }
             case 7:{
                 SistemaAnimal *s = new SistemaAnimal();
-                s->deletar_Animal();
+                s->remover_Animal();
             }
             case 8:{
                 SistemaAnimal *s = new SistemaAnimal();
