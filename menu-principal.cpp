@@ -31,6 +31,10 @@ void iniciarMenu(){
                  Sistema *s = new Sistema();
                  s->mostrar_Funcionarios();
             }
+            case 5:{
+                SistemaAnimal *s = new Sistema();
+                s->cadastrar_Animal();
+            }
             
             default:
                 break;

@@ -31,3 +31,19 @@ SistemaAnimal::~SistemaAnimal()
 {
 
 }
+void SistemaAnimal::cadastrar_Ave()
+{
+
+}
+void SistemaAnimal::cadastrar_Reptil()
+{
+
+}
+void SistemaAnimal::cadastrar_Mamifero()
+{
+
+}
+void SistemaAnimal::cadastrar_Anfibio()
+{
+
+}
