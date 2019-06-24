@@ -1,7 +1,7 @@
+
 #ifndef _ANFIBIONATIVO_
 #define _ANFIBIONATIVO_
-#include "Anfibio.h"
-
+#include "./Anfibio.h"
 class AnfibioNativo : public Anfibio{
     private:
 
@@ -11,3 +11,4 @@ class AnfibioNativo : public Anfibio{
     //sobrecarga de operadores caso precise aqui em baixo
 };
 #endif
+

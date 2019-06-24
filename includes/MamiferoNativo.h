@@ -1,3 +1,4 @@
+
 #ifndef _MAMIFERO_NATIVO_
 #define _MAMIFERO_NATIVO_
 #include "Mamifero.h"
@@ -11,3 +12,4 @@ class MamiferoNativo : public Mamifero{
         //sobrecarga de operadores caso presice aqui em baixo:     
 };
 #endif
+

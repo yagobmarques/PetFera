@@ -23,14 +23,15 @@ private:
 public:
     Sistema();
     ~Sistema();
-    int verificarID(int id);
     void cadastrar_Veterinario();
     void cadastrar_Tratador();
     void cadastrar_Funcionario();
     void remover_Funcionario();
     void mostrar_Funcionarios();
     void management_Funcionario();
-
+    void remover_FuncionarioById(int id);   
+    void alterar_Funcionario();
+    int verificarID(int id);
     //sobrecarga de operadores:
 };
 #endif

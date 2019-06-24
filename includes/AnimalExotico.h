@@ -2,6 +2,8 @@
 #define _ANIMAL_EXOTICO_H_
 #include <string>
 
+using namespace std;
+
 class AnimalExotico
 {
 private:

@@ -10,8 +10,8 @@
 
 #include <iostream>
 #include <string>
-#include "../../Animal.h"
-
+#include "Animal.h"
+#include "data.h"
 using namespace std;
 
 class Anfibio : public Animal
