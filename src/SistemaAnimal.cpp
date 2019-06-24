@@ -4,7 +4,6 @@ void SistemaAnimal::cadastrar_Animal()
 
 }
 void SistemaAnimal::alterar_Animal()
-{
   {
   string escolha = "-1";
   int aux = -1;
@@ -36,7 +35,7 @@ void SistemaAnimal::alterar_Animal()
 }
 
 
-}
+
 void SistemaAnimal::remover_Animal()
 {
 
