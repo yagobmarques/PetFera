@@ -10,18 +10,16 @@
 
 #include <iostream>
 #include <string>
-#include "./Funcionario.h"
-
+#include "Funcionario.h"
 using namespace std;
 
 class Veterinario : public Funcionario{
     private:
         string m_crmv;
-    public:          
-        Veterinario();
-        ~Veterinario();
+    public:        
         string getM_crmv();
         void setM_crmv(string m_crmv);
-        //sobrecarga de operadores:     
+        //sobrecarga de operadores:    
+				Veterinario& operator=(Veterinario& v ); 
 };
 #endif

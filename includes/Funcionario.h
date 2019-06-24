@@ -10,8 +10,6 @@
 
 #include <iostream>
 #include <string>
-#include "./data.h"
-//#include "../../utils/dataUtil.h"
 using namespace std;
 
 class Funcionario{
@@ -22,8 +20,8 @@ class Funcionario{
         short m_idade;
         string m_tipo_sanguineo;
         char m_fator_rh;
-        string m_especialidade;
-        string m_funcao;
+        string m_especialidade;    
+        string m_funcao;  
     public:          
         Funcionario();
         ~Funcionario();
@@ -45,8 +43,7 @@ class Funcionario{
         string getM_funcao();
             
         //sobrecarga de operadores:
-
-        Funcionario& operator= (Funcionario const &f);
+				Funcionario& operator=(const Funcionario& f );
         friend ostream& operator<< (ostream &o, Funcionario const f);       
 };
 

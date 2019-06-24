@@ -10,7 +10,7 @@
 
 #include <iostream>
 #include <string>
-#include "../Animal.h"
+#include "Animal.h"
 
 using namespace std;
 
@@ -22,10 +22,10 @@ class Reptil : public Animal{
     public:          
         Reptil();
         ~Reptil();
-        bool Reptil::getM_venenoso();
-        void Reptil::setM_venenoso(bool m_venenoso);
-        string Reptil::getM_tipo_veneno();
-        void Reptil::setM_tipo_veneno(string m_tipo_veneno);
+        bool getM_venenoso();
+        void setM_venenoso(bool m_venenoso);
+        string getM_tipo_veneno();
+        void setM_tipo_veneno(string m_tipo_veneno);
         //sobrecarga de operadores:     
 };
 #endif
