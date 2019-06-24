@@ -10,8 +10,6 @@
 
 #include <iostream>
 #include <cstdlib>
-#include "./includes/menu.h"
-#include "./includes/Sistema.h"
-
+#include "./menu-principal.h"
 
 #endif
