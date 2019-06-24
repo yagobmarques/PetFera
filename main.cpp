@@ -7,6 +7,8 @@
 */
 #include "main.h"
 int main (int argc, char *argv[]) {  
+    Sistema *s = new Sistema();
+    s->management_Funcionario();
     Menu *menu = new Menu();
 	menu->iniciarMenu();
     return 0;
