@@ -26,8 +26,12 @@ public:
     void alterar_Animal();
     void remover_Animal();
     void listar_Animal();
-    void remover_AnimalById(int id);   
-    int verificar_animalID(int id);
+    void remover_AnimalById(int m_id);   
+    int verificar_animalID(int m_id);
+    void cadastrar_Ave();
+    void cadastrar_Reptil();
+    void cadastrar_Mamifero();
+    void cadastrar_Anfibio();
     //sobrecarga de operadores:
 };
 #endif
