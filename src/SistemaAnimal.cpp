@@ -15,11 +15,11 @@ void SistemaAnimal::listar_Animal()
 {
 
 }
-void SistemaAnimal::remover_AnimalById(int id)
+void SistemaAnimal::remover_AnimalById(int m_id)
 {
 
 }   
-int SistemaAnimal::verificar_animalID(int id)
+int SistemaAnimal::verificar_animalID(int m_id)
 {
 
 }
