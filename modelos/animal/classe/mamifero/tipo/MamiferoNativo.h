@@ -1,5 +1,6 @@
 #ifndef _MAMIFERO_NATIVO_
 #define _MAMIFERO_NATIVO_
+#include "Mamifero.h"
 class MamiferoNativo : public Mamifero{
     private:
     

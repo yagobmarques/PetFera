@@ -1,5 +1,6 @@
 #ifndef _MAMIFERO_EXOTICO_
 #define _MAMIFERO_EXOTICO_
+#include "Mamifero.h"
 class MamiferoExotico : public Mamifero{
     private:
     
