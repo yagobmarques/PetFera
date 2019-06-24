@@ -1,3 +1,4 @@
+
 #ifndef _MAMIFERO_EXOTICO_
 #define _MAMIFERO_EXOTICO_
 using namespace std;
@@ -12,3 +13,4 @@ class MamiferoExotico : public Mamifero{
         //sobrecarga de operadores caso presice aqui em baixo     
 };
 #endif
+

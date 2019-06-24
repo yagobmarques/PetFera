@@ -1,7 +1,9 @@
 #ifndef _ANIMAL_EXOTICO_H_
 #define _ANIMAL_EXOTICO_H_
 #include <string>
+
 using namespace std;
+
 class AnimalExotico
 {
 private:

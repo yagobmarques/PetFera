@@ -1,3 +1,4 @@
+
 #ifndef _AVE_NATIVA_
 #define _AVE_NATIVA_
 using namespace std;
@@ -12,3 +13,4 @@ class AveNativa : public Ave{
         //sobrecarga de operadores caso presice aqui em baixo     
 };
 #endif
+

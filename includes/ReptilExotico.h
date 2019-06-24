@@ -1,6 +1,7 @@
+
 #ifndef _REPTIL_EXOTICO_
 #define _REPTIL_EXOTICO_
-#include "./Reptil.h"
+#include "Reptil.h"
 class ReptilExotico : public Reptil{
     private:
         bool m_venenoso;
@@ -12,3 +13,4 @@ class ReptilExotico : public Reptil{
         //sobrecarga de operadores:     
 };
 #endif
+

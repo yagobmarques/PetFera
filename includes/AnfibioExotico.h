@@ -1,3 +1,4 @@
+
 #ifndef _ANFIBIOEXOTICO_
 #define _ANFIBIOEXOTICO_
 #include "./Anfibio.h"
@@ -10,3 +11,4 @@ class AnfibioExotico : public Anfibio{
     //sobrecarga de operadores caso precise aqui em baixo
 };
 #endif
+
