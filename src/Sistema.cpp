@@ -22,7 +22,7 @@ void Sistema::cadastrar_Veterinario()
 {
   ofstream saveDados("./funcionario.csv", ios::app);
   string respostas = "-1";
-  int aux;
+  int aux = 0;
   Veterinario *v = new Veterinario();
   do
   {
@@ -90,7 +90,7 @@ void Sistema::cadastrar_Tratador()
 {
   ofstream saveDados("./funcionario.csv", ios::app);
   string respostas = "-1";
-  int aux;
+  int aux = 0;
   Tratador *t = new Tratador();
   do
   {
@@ -101,7 +101,7 @@ void Sistema::cadastrar_Tratador()
       aux = std::stoi(respostas);
       if (Sistema::verificarID(aux) == 1)
       {
-        aux = std::stoi("bilbo");
+        aux = std::stoi("b");
       }
     }
     catch (const std::exception &e)
@@ -161,9 +161,9 @@ void Sistema::cadastrar_Tratador()
       respostas = "-1";
     }
   } while ((aux < 0) || (aux > 2));
-  t->SetNivel_de_segurança(aux);
+  t->SetNivel_de_seguranca(aux);
   //botar no arquivo .csv
-  saveDados << t->getM_id() << ";" << t->getM_funcao() << ";" << t->getM_nome() << ";" << t->getM_cpf() << ";" << t->getM_idade() << ";" << t->getM_tipo_sanguineo() << ";" << t->getM_fator_rh() << ";" << t->getM_especialidade() << ";;" << t->GetNivel_de_segurança() << ";" << endl;
+  saveDados << t->getM_id() << ";" << t->getM_funcao() << ";" << t->getM_nome() << ";" << t->getM_cpf() << ";" << t->getM_idade() << ";" << t->getM_tipo_sanguineo() << ";" << t->getM_fator_rh() << ";" << t->getM_especialidade() << ";;" << t->GetNivel_de_seguranca() << ";" << endl;
   delete (t);
   saveDados.close();
 }
@@ -205,11 +205,11 @@ void Sistema::cadastrar_Funcionario()
     }
   }
 }
-void Sistemaremover_Funcionario()
+void Sistema::remover_Funcionario()
 {
   ifstream dados("funcionario.csv");
   string escolha = "-1";
-  int aux;
+  int aux = 0;
   cout << "---- Menu de remoção de um Funcionário ---- \n"
        << endl;
   cout << "Entre com o ID do funcionário" << endl;
@@ -225,7 +225,8 @@ void Sistemaremover_Funcionario()
       aux = -1000;
     }
   } while (aux == -1000);
-  if (Sistema::verificarID(aux) == 0)
+  Sistema *s  = new Sistema();
+  if (s->verificarID(aux) == 0)
   {
     cout << "Não existe nenhum funcionário com essa ID" << endl;
   }
@@ -233,8 +234,8 @@ void Sistemaremover_Funcionario()
   {
     string line;
     ofstream aux1("aux.csv");
-    int val;
-    int aux2;
+    int val =0;
+    int aux2 = 0;
     while (getline(dados, line))
     {
       aux2 = line.find(";");
@@ -248,6 +249,7 @@ void Sistemaremover_Funcionario()
     rename("aux.csv", "funcionario.csv");
     aux1.close();
     dados.close();
+    delete(s);
   }
 }
 void Sistema::mostrar_Funcionarios()
@@ -259,7 +261,7 @@ void Sistema::mostrar_Funcionarios()
   while (getline(dados, line))
   {
     posi = 0;
-    for (int i = 0; i < line.size(); i++)
+    for (unsigned int i = 0; i < line.size(); i++)
     {
       if (line[i] == ';')
       {
@@ -284,6 +286,7 @@ void Sistema::mostrar_Funcionarios()
 }
 void Sistema::management_Funcionario()
 {
+  Sistema *s = new Sistema();
   string escolha = "-1"; /**< Variável de escolha */
   int aux;               /**< Variavel para auxiliar no bloco try catch */
   while (escolha != "0")
@@ -309,16 +312,16 @@ void Sistema::management_Funcionario()
     switch (aux)
     {
     case 1:
-      Sistema::cadastrar_Funcionario();
+      s->cadastrar_Funcionario();
       break;
     case 2:
-      Sistema::remover_Funcionario();
+      s->remover_Funcionario();
       break;
     case 3:
-      Sistema::alterar_Funcionario();
+      s->alterar_Funcionario();
       break;
     case 4:
-      Sistema::mostrar_Funcionarios();
+      s->mostrar_Funcionarios();
       break;
     case 0:
       break;
@@ -327,6 +330,7 @@ void Sistema::management_Funcionario()
       break;
     }
   }
+  delete(s);
 }
 void Sistema::remover_FuncionarioById(int id)
 {

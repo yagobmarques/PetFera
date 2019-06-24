@@ -118,9 +118,13 @@ istream& operator>> (istream &is, Animal& animal){
 	//getline(is, animal.m_nome_batismo,';');
 	//getline(is, id_veterinario, ';');
 	getline(is,animal.m_nome_batismo,';');
+	try{
 	if(!id.empty()) animal.setM_id(stoi(id));
 	if(!tamanho.empty()) animal.setM_tamanho(stod(tamanho));
-	 
+	}catch (const std::exception &e)
+    {
+      cout << "Id inválido ou existente" << endl;
+    }
 	/*is >> animal.m_id;
 		//>> delim
 	is.ignore(2,';');
