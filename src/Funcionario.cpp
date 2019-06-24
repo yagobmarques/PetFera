@@ -94,3 +94,13 @@ void Funcionario::setM_funcao(string m_funcao){
 string Funcionario::getM_funcao(){
   return this->m_funcao;
 }
+Funcionario& Funcionario::operator=(const Funcionario& f ){
+	m_id=f.m_id;
+	m_nome=f.m_nome;
+	m_cpf=f.m_cpf;
+	m_idade=f.m_idade;
+	m_tipo_sanguineo=f.m_tipo_sanguineo;
+	m_fator_rh=f.m_fator_rh;
+	m_especialidade=f.m_especialidade;
+	return *this;
+}

@@ -10,19 +10,21 @@
 
 #include <iostream>
 #include <string>
-#include "./Funcionario.h"
+#include "Funcionario.h"
 using namespace std;
 
 class Tratador : public Funcionario {
     private:
         int m_nivel_de_seguranca;
-    public:          
-        Tratador();
-        ~Tratador();
+    public:      
+				Tratador();
+				~Tratador();  
         void SetNivel_de_seguranca(int m_nivel_de_seguranca);
         int GetNivel_de_seguranca();
         
             
-        //sobrecarga de operadores:     
+        //sobrecarga de operadores:
+				Tratador& operator=(Tratador& t );
+				     
 };
 #endif
