@@ -22,16 +22,18 @@ void iniciarMenu(){
             case 2: {
                  Sistema *s = new Sistema();
                  s->alterar_Funcionario();
+                 break;
             }   
             case 3:{
                  Sistema *s = new Sistema();
                  s->remover_Funcionario();
+                 break;
             }        
             case 4:{
                  Sistema *s = new Sistema();
                  s->mostrar_Funcionarios();
+                 break;
             }
-       
             default:
                 break;
         }       
