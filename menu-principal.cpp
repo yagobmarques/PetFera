@@ -17,26 +17,30 @@ void iniciarMenu(){
             case 1: {
                 Sistema *s = new Sistema();
                 s->cadastrar_Funcionario();
+                delete(s);
                 break;
             }     
             case 2: {
                  Sistema *s = new Sistema();
                  s->alterar_Funcionario();
+                 delete(s);
                  break;
             }   
             case 3:{
                  Sistema *s = new Sistema();
                  s->remover_Funcionario();
+                 delete(s);
                  break;
             }        
             case 4:{
                  Sistema *s = new Sistema();
                  s->mostrar_Funcionarios();
+                 delete(s);
                  break;
             }
             default:
                 break;
-        }       
+        }      
     }while(option != 0);    
 }
 /**
