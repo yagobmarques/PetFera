@@ -1,7 +1,7 @@
 #ifndef _AVE_NATIVA_
 #define _AVE_NATIVA_
 using namespace std;
-#include "../Ave.h"
+#include "Ave.h"
 class AveNativa : public Ave{
     private:
  

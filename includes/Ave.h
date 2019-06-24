@@ -10,7 +10,7 @@
 
 #include <iostream>
 #include <string>
-#include "../Animal.h"
+#include "Animal.h"
 
 using namespace std;
 

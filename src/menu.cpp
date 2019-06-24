@@ -9,7 +9,7 @@
 * @brief inicializa o menu do sistema
 */
 void Menu::iniciarMenu(){
-    carregarDados();    
+    Menu::carregarDados("","");    
 }
 // sobrecarga do operador de extração de dados >>
 // istream = input stream

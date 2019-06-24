@@ -10,17 +10,17 @@
 
 #include <iostream>
 #include <string>
-#include "../Animal.h"
+#include "Animal.h"
 
 using namespace std;
 
-class AnimalSilvestre{
+class AnimalSilvestre {
     private:
         string m_autorizacao_ibama;
         
     public:          
-        Mamifero();
-        ~Mamifero();
+        AnimalSilvestre();
+        ~AnimalSilvestre();
         //sobrecarga de operadores:     
 };
 #endif

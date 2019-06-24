@@ -2,7 +2,8 @@ PROG = cpp_crud
 CC = g++ -std=c++11
 FLAGS = -O -g -Wall
 
-OBJS =  main.o menu.o  Funcionario.o animal-crud.o funcionario-crud.o data.o dataUtil.o stringUtil.o Animal.o AnimalExotico.o AnimalNativo.o AnimalSilvestre.o Anfibio.o AnfibioExotico.o AnfibioNativo.o Ave.o AveExotica.o AveNativa.o Mamifero.o MamiferoExotico.o MamiferoNativo.o Reptil.o ReptilExotico.o ReptilNativo.o  Tratador.o veterinario.o 
+OBJS =  main.o  Funcionario.o Tratador.o Veterinario.o data.o menu.o
+ANIMAIS = Animal.o AnimalExotico.o AnimalNativo.o AnimalSilvestre.o Anfibio.o AnfibioExotico.o AnfibioNativo.o Ave.o AveExotica.o AveNativa.o Mamifero.o MamiferoExotico.o MamiferoNativo.o Reptil.o ReptilExotico.o ReptilNativo.o  
 MENU_PATH = ./telas/menu
 ANIMAL-CRUD_PATH = ./telas/animal-crud
 FUNCIONARIO-CRUD_PATH = ./telas/funcionario-crud
@@ -13,7 +14,7 @@ ANIMAL_PATH = ./modelos/animal
 UTILS_PATH = ./utils
 
 $(PROG):$(OBJS)				
-		$(CC) -o $(PROG) $(OBJS)
+		$(CC) -o $(PROG) $(OBJS) $(ANIMAIS)
 		rm -f *.o
 		./$(PROG)
 all:
@@ -21,88 +22,72 @@ all:
 main.o:
 	$(CC) $(FLAGS) -c main.cpp
 
-Animal.o: Animal.h data.h Veterinario.h Tratador.h   
-	$(CC) $(FLAGS) -c $(ANIMAL_PATH)/Animal.cpp  
+Animal.o: 
+	$(CC) $(FLAGS) -c ./src/Animal.cpp  
 
-AnimalExotico.o: AnimalExotico.h AnimalExotico.cpp
-	$(CC) $(FLAGS) -c AnimalExotico.cpp
+AnimalExotico.o:
+	$(CC) $(FLAGS) -c ./src/AnimalExotico.cpp
 
-AnimalNativo.o: AnimalNativo.h animalNativo.cpp
-	$(CC) $(FLAGS) -c AnimalNativo.cpp
+AnimalNativo.o: 
+	$(CC) $(FLAGS) -c ./src/AnimalNativo.cpp
 
-AnimalSilvestre.o: AnimalSilvestre.h Animal.h AnimalSilvestre.cpp
-	$(CC) $(FLAGS) -c AnimalSilvestre.cpp
+AnimalSilvestre.o: 
+	$(CC) $(FLAGS) -c ./src/AnimalSilvestre.cpp
 
-Anfibio.o: Anfibio.h Animal.h Anfibio.cpp
-	$(CC) $(FLAGS) -c Anfibio.cpp Animal.cpp
+Anfibio.o: 
+	$(CC) $(FLAGS) -c ./src/Anfibio.cpp 
 
-AnfibioExotico.o: AnfibioExotico.h AnfibioExotico.cpp Anfibio.h
-	$(CC) $(FLAGS) -c AnfibioExotico.cpp
+AnfibioExotico.o:
+	$(CC) $(FLAGS) -c ./src/AnfibioExotico.cpp
 
-AnfibioNativo.o: AnfibioNativo.h AnfibioNativo.cpp Anfibio.h
-	$(CC) $(FLAGS) -c AnfibioNativo.cpp
+AnfibioNativo.o: 
+	$(CC) $(FLAGS) -c ./src/AnfibioNativo.cpp
 
-Ave.o: Ave.h Animal.h
-	$(CC) $(FLAGS) -c Ave.cpp
+Ave.o: 
+	$(CC) $(FLAGS) -c ./src/Ave.cpp
 
-AveExotica.o: AveExotica.h AveExotica.cpp Ave.h
-	$(CC) $(FLAGS) -c AveExotica.cpp
+AveExotica.o: 
+	$(CC) $(FLAGS) -c ./src/AveExotica.cpp
 
-AveNativa.o: AveNativa.h AveNativa.cpp Ave.h
-	$(CC) $(FLAGS) -c AveNativa.cpp
+AveNativa.o:
+	$(CC) $(FLAGS) -c ./src/AveNativa.cpp
 
-Mamifero.o: Mamifero.h Mamifero.cpp Animal.h
-	$(CC) $(FLAGS) -c Mamifero.cpp
+Mamifero.o:
+	$(CC) $(FLAGS) -c ./src/Mamifero.cpp
 
-MamiferoExotico.o: MamiferoExotico.h MamiferoExotico.cpp Mamifero.h
-	$(CC) $(FLAGS) -c MamiferoExotico.cpp
+MamiferoExotico.o:
+	$(CC) $(FLAGS) -c ./src/MamiferoExotico.cpp
 
-MamiferoNativo.o: MamiferoNativo.h MamiferoNativo.cpp Mamifero.h
-	$(CC) $(FLAGS) -c MamiferoNativo.cpp
+MamiferoNativo.o:
+	$(CC) $(FLAGS) -c ./src/MamiferoNativo.cpp
 
-Reptil.o: Reptil.h Animal.h reptil.cpp
-	$(CC) $(FLAGS) -c Reptil.cpp
+Reptil.o: 
+	$(CC) $(FLAGS) -c ./src/Reptil.cpp
 
-ReptilExotico.o: ReptilExotico.h ReptilExotico.cpp Reptil.h
-	$(CC) $(FLAGS) -c ReptilExotico.cpp
+ReptilExotico.o: 
+	$(CC) $(FLAGS) -c ./src/ReptilExotico.cpp
 
-ReptilNativo.o: ReptilNativo.h ReptilNativo.cpp Reptil.h
-	$(CC) $(FLAGS) -c ReptilNativo.cpp
+ReptilNativo.o:
+	$(CC) $(FLAGS) -c ./src/ReptilNativo.cpp
 
-Tratador.o: Tratador.h Tratador.cpp Funcionario.h 
-	$(CC) $(FLAGS) -c Tratador.cpp 
+Tratador.o:
+	$(CC) $(FLAGS) -c ./src/Tratador.cpp 
 
-Veterinario.o: Veterinario.h Veterinario.cpp Funcionario.h
-	$(CC) $(FLAGS) -c Veterinario.cpp
+Veterinario.o:
+	$(CC) $(FLAGS) -c ./src/Veterinario.cpp
 
-Sistema.o: Sistema.h data.h Sistema.cpp Veterinario.h Tratador.h
-	$(CC) $(FLAGS) -c Sistema.cpp 
-menu.o: menu.h menu.cpp Animal.h
-	$(CC) $(FLAGS) -c $(MENU_PATH)/menu.cpp
+Sistema.o: 
+	$(CC) $(FLAGS) -c ./src/Sistema.cpp 
 
+# menu.o: menu.h menu.cpp Animal.h
+# 	$(CC) $(FLAGS) -c ./src/$(MENU_PATH)/menu.cpp
 
-funcionario.o: Funcionario.h Funcionario.cpp data.h
-	$(CC) $(FLAGS) -c Funcionario.cpp
-	
-data.o: data.cpp data.h
-	$(CC) $(FLAGS) -c $(DATA_PATH)/data.cpp
-
-animal-crud.o: animal-crud.h
-	$(CC) $(FLAGS) -c animal-crud.cpp
-
-funcionario-crud.o: funcionario.o data.o
-	$(CC) $(FLAGS) -c $(FUNCIONARIO-CRUD_PATH)/funcionario-crud.cpp
-
-dataUtil.o: data.o
-	$(CC) $(FLAGS) -c $(UTILS_PATH)/dataUtil.cpp
-
-stringUtil.o:
-	$(CC) $(FLAGS) -c $(UTILS_PATH)/stringUtil.cpp
-
-
-
-
-
+Funcionario.o:
+	$(CC) $(FLAGS) -c ./src/Funcionario.cpp
+data.o: 
+	$(CC) $(FLAGS) -c ./src/data.cpp
+menu.o: 
+	$(CC) $(FLAGS) -c ./src/menu.cpp
 
 cls:
 	rm -f $(PROG) $(OBJS)

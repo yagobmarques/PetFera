@@ -7,12 +7,8 @@ void Veterinario::setM_crmv(string m_crmv)
 {
     this->m_crmv = m_crmv;
 }
-Veterinario::Veterinario(){
-  
-}
-Veterinario::~Veterinario(){
-  
-}
+
+
 Veterinario& Veterinario::operator=(Veterinario& v ) {
 	this->setM_id(v.getM_id());
 	this->setM_nome(v.getM_nome());

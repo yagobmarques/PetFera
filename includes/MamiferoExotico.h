@@ -1,7 +1,7 @@
 #ifndef _MAMIFERO_EXOTICO_
 #define _MAMIFERO_EXOTICO_
-using namespace stf;
-#include "./Mamifero.h"
+using namespace std;
+#include "Mamifero.h"
 class MamiferoExotico : public Mamifero{
     private:
     

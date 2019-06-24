@@ -1,4 +1,4 @@
-#include "Tratador.h"
+#include "../includes/Tratador.h"
 Tratador::Tratador(){
 }
 Tratador::~Tratador(){
@@ -24,9 +24,4 @@ int Tratador::GetNivel_de_seguranca()
 {
     return this->m_nivel_de_seguranca;
 }
-Tratador::Tratador(){
 
-}
-Tratador::~Tratador(){
-  
-}
