@@ -60,8 +60,8 @@ void iniciarMenu(){
             case 7: {
                 string id;
                 SistemaAnimal *sa = new SistemaAnimal();
-                cout << "Digite o id do animal";
-                cin >> id;
+                cout << "Digite o id do animal" <<endl;
+                getline(cin, id);
                 if (isInt(id)){
                     sa->deletarAnimal(stoi(id));
                 } else {
@@ -70,7 +70,31 @@ void iniciarMenu(){
                 delete(sa);
                 break;
 
-            }
+            }        
+            case 8: {
+                SistemaAnimal *sa = new SistemaAnimal();
+                sa->consultar_animal_por_classe();
+                delete(sa);
+                break;
+            }    
+             case 9: {
+                SistemaAnimal *sa = new SistemaAnimal();
+                sa->consultar_animal_por_veterinario();
+                delete(sa);
+                break;
+            } 
+             case 10: {
+                SistemaAnimal *sa = new SistemaAnimal();
+                sa->consultar_animal_por_tratador();
+                delete(sa);
+                break;
+            } 
+             case 11: {
+                SistemaAnimal *sa = new SistemaAnimal();
+                sa->listarAnimal();
+                delete(sa);
+                break;
+            } 
             default:
                 break;
         }      
@@ -81,7 +105,7 @@ void iniciarMenu(){
 * @return valor referente a opção escolhida
 */
 int escolherOpcao(){
-    set<int> options = {0,1,2,3,4,5,6,7,8};
+    set<int> options = {0,1,2,3,4,5,6,7,8,9,10,11};
     string op;
     cout <<CYAN<< "--- MENU PRINCIPAL ---"<<RESET<< endl;
     cout << "1 - criar funcionário" << endl;
@@ -91,7 +115,10 @@ int escolherOpcao(){
     cout << "5 - criar animal" << endl;
     cout << "6 - editar animal" << endl;
     cout << "7 - deletar animal" << endl;
-    cout << "8 - listar animais" << endl;
+    cout << "8 - lista animais por classe" << endl;
+    cout << "9 - lista animais por veterinaario" << endl;
+    cout << "10 - lista animais por tratador" << endl;
+    cout << "11 - listar animais" << endl;
     cout << "0 - sair"<<endl;
     getline(cin, op);
    

@@ -141,28 +141,28 @@ void SistemaAnimal::cadastrarAnimal(){
 	cout<<"Digite o nome de batismo:"<<endl;
 	getline(cin, respostas);
 	a->setM_nome_batismo(respostas);
-	int id_veterinario;
+	string id_veterinario;
     do{
         cout<<"Digite o id do veterinário (0 caso não exista):"<<endl;
-        cin>>id_veterinario;
-        if(id_veterinario<=0) break;
-        if(veterinarios.find(id_veterinario)!=veterinarios.end()){
-            a->setM_veterinario(getVeterinario_por_id(id_veterinario));
+        getline(cin,id_veterinario);
+        if(stoi(id_veterinario)<=0) break;
+        if(veterinarios.find(stoi(id_veterinario))!=veterinarios.end()){
+            a->setM_veterinario(getVeterinario_por_id(stoi(id_veterinario)));
         }else{
             cout<<"ID de veterinário inválido"<<endl;
         }
-    }while(veterinarios.find(id_veterinario)==veterinarios.end());
-	int id_tratador;
+    }while(veterinarios.find(stoi(id_veterinario))==veterinarios.end());
+	string id_tratador;
     do{
         cout<<"Digite o id do tratador (0 caso não exista):"<<endl;
-        cin>>id_tratador;
-        if(id_tratador<=0) break;
-        if(id_tratador>0 && tratadores.find(id_tratador)!=tratadores.end()){
-            a->setM_tratador(getTratador_por_id(id_tratador));
+		getline(cin, id_tratador);
+        if(stoi(id_tratador)<=0) break;
+        if(stoi(id_tratador)>0 && tratadores.find(stoi(id_tratador))!=tratadores.end()){
+            a->setM_tratador(getTratador_por_id(stoi(id_tratador)));
         }else{
             cout<<"ID de tratador inválido"<<endl;
         }
-    }while(tratadores.find(id_tratador)==tratadores.end());
+    }while(tratadores.find(stoi(id_tratador))==tratadores.end());
     animais.insert(pair<int, Animal>(maior_id, *a));
     salvarAlteracao();
 }
@@ -234,17 +234,20 @@ void SistemaAnimal::alterarDados(int id){
                 cout<<"ID de veterinário inválido"<<endl;
             }
         }while(veterinarios.find(id_veterinario)==veterinarios.end());
-        int id_tratador;
+        string id_tratador;
         do{
             cout<<"Digite o id do tratador (0 caso não exista):"<<endl;
-            cin>>id_tratador;
-            if(id_tratador<=0) break;
-            if(tratadores.find(id_tratador)!=tratadores.end()){
-                a->second.setM_tratador(getTratador_por_id(id_tratador));
+            getline(cin,id_tratador);
+			if (isInt(id_tratador)){
+				if(stoi(id_tratador)<=0) break;
+            if(tratadores.find(stoi(id_tratador))!=tratadores.end()){
+                a->second.setM_tratador(getTratador_por_id(stoi(id_tratador)));
             }else{
                 cout<<"ID de tratador inválido"<<endl;
             }
-        }while(tratadores.find(id_tratador)==tratadores.end());
+			}
+            
+        }while(tratadores.find(stoi(id_tratador))==tratadores.end());
     }else{
         cout<<"Animal não encontrado"<<endl;
     }
@@ -279,44 +282,44 @@ void SistemaAnimal::consultar_animal_por_classe_aux(string d)
 }
 void SistemaAnimal::consultar_animal_por_classe()
 {
-    int choice;
+    string choice;
 	cout<<"----Bem vindo ao menu de consulta por classe escolha uma classe:  "<<endl;
 	cout<<"digite 1 para Anfibios"<< endl;
 	cout<<"digite 2 para mamiferos"<<endl;
 	cout<<"digite 3 para Reptils"<<endl;
 	cout<<"digite 4 para Aves"<< endl;
-	cin>>choice;
-	if (choice == 1)
+	getline(cin, choice);
+	if (stoi(choice) == 1)
 		this->consultar_animal_por_classe_aux("Amphibia");
-	if (choice == 2)
+	if (stoi(choice) == 2)
 		this->consultar_animal_por_classe_aux("Mammalia");
-	if (choice == 3)
+	if (stoi(choice) == 3)
 		this->consultar_animal_por_classe_aux("Reptilia");
-	if (choice == 4)
-		this->consultar_animal_por_classe_aux("aves");
+	if (stoi(choice) == 4)
+		this->consultar_animal_por_classe_aux("Aves");
 	
 }
 void SistemaAnimal::consultar_animal_por_tratador()
 {
-	 int id_dotrata;
+	 string id_dotrata;
 	cout<<"----Bem vindo a consulta de animais por tratador escolhar:  "<<endl;
 	cout<<"digite o id do Tratador"<< endl;
-	cin>>id_dotrata;
+	getline(cin, id_dotrata);
 	for(auto it:animais)
 	{
-		if(it.second.getM_tratador().getM_id() == id_dotrata)
+		if(it.second.getM_tratador().getM_id() == stoi(id_dotrata))
 			cout<<it.second<< endl;
 	}
 }
 void SistemaAnimal::consultar_animal_por_veterinario()
 {
-	int id_dovet;
+	string id_dovet;
 	cout<<"----Bem vindo a consulta de animais por Veterinario: "<<endl;
 	cout<<"digite o id do Veterinario"<< endl;
-	cin>>id_dovet;
+	getline(cin, id_dovet);
 	for(auto it:animais)
 	{
-		if(it.second.getM_veterinario().getM_id() == id_dovet)
+		if(it.second.getM_veterinario().getM_id() == stoi(id_dovet))
 			cout<<it.second<< endl;
 	}
 }

@@ -8,7 +8,7 @@ int Sistema::verificarID(int id)
 {
   int aux = 0;
   int val = 0;
-  ifstream dadosFuncionarios("./base-de-dados/funcionario.csv");
+  ifstream dadosFuncionarios("./base-de-dados/funcionarios.csv");
   string line;
   while (getline(dadosFuncionarios, line))
   {
@@ -29,7 +29,7 @@ int Sistema::verificarID(int id)
 */
 void Sistema::cadastrar_Veterinario()
 {
-  ofstream saveDados("./base-de-dados/funcionario.csv", ios::app);
+  ofstream saveDados("./base-de-dados/funcionarios.csv", ios::app);
   string respostas = "-1";
   int aux = 0;
   Veterinario *v = new Veterinario();
@@ -79,9 +79,9 @@ void Sistema::cadastrar_Veterinario()
   v->setM_tipo_sanguineo(respostas);
   do
   {
-    cout << "Digite o fator rh: " << endl;
+    cout << "Digite o fator rh (+ ou -): " << endl;
     getline(cin, respostas);
-  } while (respostas.length() != 1);
+  } while (!(respostas == "+" || respostas == "-"));
   v->setM_fator_rh(respostas[0]);
   cout << "Digite a especialidade do veterinario: " << endl;
   getline(cin, respostas);
@@ -152,9 +152,9 @@ void Sistema::cadastrar_Tratador()
   t->setM_tipo_sanguineo(respostas);
   do
   {
-    cout << "Digite o fator rh: " << endl;
+    cout << "Digite o fator rh (+ ou -): " << endl;
     getline(cin, respostas);
-  } while (respostas.length() != 1);
+  } while (!(respostas == "+" || respostas == "-"));
   t->setM_fator_rh(respostas[0]);
   cout << "Digite a especialidade do tratador: " << endl;
   getline(cin, respostas);

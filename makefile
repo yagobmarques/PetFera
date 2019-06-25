@@ -5,7 +5,7 @@ FLAGS = -O -g -Wall
 OBJS =  main.o menu-principal.o stringUtil.o Sistema.o SistemaAnimal.o Funcionario.o Tratador.o Veterinario.o data.o Animal.o AnimalExotico.o AnimalNativo.o AnimalSilvestre.o Anfibio.o AnfibioExotico.o AnfibioNativo.o Ave.o AveExotica.o AveNativa.o Mamifero.o MamiferoExotico.o MamiferoNativo.o Reptil.o ReptilExotico.o ReptilNativo.o  
 
 $(PROG):$(OBJS)				
-		$(CC) -o $(PROG) $(OBJS) 
+		$(CC) -o $(PROG) $(OBJS)
 		rm -f *.o
 		./$(PROG)
 all:
