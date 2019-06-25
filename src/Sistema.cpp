@@ -279,32 +279,22 @@ void Sistema::remover_Funcionario()
 */
 void Sistema::mostrar_Funcionarios()
 {
-  ifstream dados("funcionario.csv");
-  string line;
-  int commas[10];
-  int posi;
+  ifstream dados("./base-de-dados/funcionarios.csv");
+  string line; 
   while (getline(dados, line))
   {
-    posi = 0;
-    for (unsigned int i = 0; i < line.size(); i++)
-    {
-      if (line[i] == ';')
-      {
-        commas[posi] = i;
-        posi++;
-      }
-    }
+    vector<string> splitted_line = splitString(line, ";");
     cout << "---- Funcionário ----" << endl;
-    cout << "ID:" << line.substr(0, commas[0]) << endl;                                              //id
-    cout << "Função: " << line.substr(commas[0] + 1, commas[1] - commas[0] - 1) << endl;             //funcao
-    cout << "Nome: " << line.substr(commas[1] + 1, commas[2] - commas[1] - 1) << endl;               //nome do rapaz
-    cout << "CPF: " << line.substr(commas[2] + 1, commas[3] - commas[2] - 1) << endl;                //cpf
-    cout << "Idade: " << line.substr(commas[3] + 1, commas[4] - commas[3] - 1) << endl;              //idade
-    cout << "Tipo sanguíneo: " << line.substr(commas[4] + 1, commas[5] - commas[4] - 1) << endl;     //tipo sanguineo
-    cout << "Fator RH: " << line.substr(commas[5] + 1, commas[6] - commas[5] - 1) << endl;           //fator rh
-    cout << "Especialidade: " << line.substr(commas[6] + 1, commas[7] - commas[6] - 1) << endl;      //especialidade
-    cout << "CMRV: " << line.substr(commas[7] + 1, commas[8] - commas[7] - 1) << endl;               //cmrv
-    cout << "Nivel de Segurança: " << line.substr(commas[8] + 1, commas[9] - commas[8] - 1) << endl; //Nivel de segurança
+    cout << "ID:" << splitted_line[0] << endl;                   //id
+    cout << "Função: " << splitted_line[1] << endl;             //funcao
+    cout << "Nome: " << splitted_line[2] << endl;               //nome do funcionario
+    cout << "CPF: " << splitted_line[3] << endl;                //cpf
+    cout << "Idade: " << splitted_line[4] << endl;              //idade
+    cout << "Tipo sanguíneo: " << splitted_line[5] << endl;     //tipo sanguineo
+    cout << "Fator RH: " << splitted_line[6] << endl;           //fator rh
+    cout << "Especialidade: " << splitted_line[7] << endl;      //especialidade
+    cout << "CMRV: " << splitted_line[8] << endl;               //cmrv
+    cout << "Nivel de Segurança: " << splitted_line[9] << endl; //Nivel de segurança
     cout << endl;
   }
   dados.close();

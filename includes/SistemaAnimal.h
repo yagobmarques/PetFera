@@ -12,16 +12,15 @@ using namespace std;
 
 #include <iostream>
 #include <string>
-#include "Veterinario.h"
-#include "Tratador.h"
 #include <fstream>
 #include <cstdio>
-
 #include <map>
-#include "Animal.h"
 #include<sstream>
 #include <stdlib.h>
-
+#include "../utils/stringUtil.h"
+#include "Veterinario.h"
+#include "Tratador.h"
+#include "Animal.h"
 class SistemaAnimal{
 private:
     map<int, Animal> animais;

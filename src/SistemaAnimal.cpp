@@ -24,10 +24,10 @@ void SistemaAnimal::carregarDados(){
 				getline(linestream, crmv, ';');
 				linestream>>vazio;
 				Veterinario v;
-				v.setM_id(stoi(id));
+				v.setM_id(isInt(id));
 				v.setM_nome(nome);
 				v.setM_cpf(cpf);
-				v.setM_idade(stoi(idade));
+				v.setM_idade(isInt(idade));
 				v.setM_tipo_sanguineo(tipo_sanguineo);
 				v.setM_fator_rh(fator_rh[0]);
 				v.setM_especialidade(especialidade);
@@ -38,10 +38,10 @@ void SistemaAnimal::carregarDados(){
 				getline(linestream, vazio, ';');
 				linestream>>seguranca;
 				Tratador t;
-				t.setM_id(stoi(id));
+				t.setM_id(isInt(id));
 				t.setM_nome(nome);
 				t.setM_cpf(cpf);
-				t.setM_idade(stoi(idade));
+				t.setM_idade(isInt(idade));
 				t.setM_tipo_sanguineo(tipo_sanguineo);
 				t.setM_fator_rh(fator_rh[0]);
 				t.setM_especialidade(especialidade);
@@ -65,10 +65,10 @@ void SistemaAnimal::carregarDados(){
 			getline(lineAnimal, id_veterinario, ';');
 			lineAnimal>>id_tratador;
 			if(!id_veterinario.empty() && id_veterinario!="0"){
-				dados.setM_veterinario(getVeterinario_por_id(stoi(id_veterinario)));
+				dados.setM_veterinario(getVeterinario_por_id(isInt(id_veterinario)));
 			}
 			if(!id_tratador.empty() && id_tratador!="0"){
-				dados.setM_tratador(getTratador_por_id(stoi(id_tratador)));
+				dados.setM_tratador(getTratador_por_id(isInt(id_tratador)));
 			}
 			animais.insert(pair<int, Animal>(dados.getM_id(), dados));
 	}
@@ -128,7 +128,7 @@ void SistemaAnimal::cadastrarAnimal(){
 	a->setM_sexo(respostas[0]);
 	cout<<"Digite o tamanho:"<<endl;
 	getline(cin, respostas);
-    tamanho=stod(respostas);
+    tamanho=isDouble(respostas);
 	a->setM_tamanho(tamanho);
     cout<<"Digite a dieta:"<<endl;
 	getline(cin, respostas);
@@ -210,7 +210,7 @@ void SistemaAnimal::alterarDados(int id){
         a->second.setM_sexo(respostas[0]);
         cout<<"Digite o tamanho:"<<endl;
         getline(cin, respostas);
-        tamanho=stod(respostas);
+        tamanho=isDouble(respostas);
         a->second.setM_tamanho(tamanho);
         cout<<"Digite a dieta:"<<endl;
         getline(cin, respostas);

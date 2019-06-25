@@ -17,7 +17,7 @@ using namespace std;
 #include "Tratador.h"
 #include <fstream>
 #include <cstdio>
-
+#include "../utils/stringUtil.h"
 #include <map>
 #include "Animal.h"
 #include<sstream>
