@@ -304,8 +304,14 @@ void SistemaAnimal::consultar_animal_por_tratador()
 	cin>>id_dotrata;
 	for(auto it:tratadores)
 	{
-		if(it.first == id_dotrata)
-			cout<<it.second<< endl;
+		if(it.first. == id_dotrata)
+			aux = it.second
+	}
+	for(auto eita:animais)
+	{
+		if(eita.second.getM_tratador == aux)
+			cout<<eita.second<<endl;	
+
 	}
 }
 void SistemaAnimal::consultar_animal_por_veterinario()
@@ -317,7 +323,13 @@ void SistemaAnimal::consultar_animal_por_veterinario()
 	for(auto it:veterinarios)
 	{
 		if(it.first == id_dovet)
-			cout<<it.second<< endl;
+			auxiliar = it.second		
+	}
+	for(auto loco:animais)
+	{
+		if(loco.second.getM_veterinario == auxiliar)
+			cout<<loco.second<<endl;
+	
 	}
 }
 
