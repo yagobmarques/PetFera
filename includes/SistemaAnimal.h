@@ -23,7 +23,7 @@ using namespace std;
 #include "Animal.h"
 class SistemaAnimal{
 private:
-     map<int, Animal> animais;
+    map<int, Animal> animais;
 	map<int, Veterinario> veterinarios;
 	map<int, Tratador> tratadores;
 public:
@@ -42,5 +42,6 @@ public:
 	Tratador getTratador_por_id(int id);
     void consultar_animal_por_classe_aux(string d);
     //sobrecarga de operadores:
+    friend ostream& operator<< (ostream &o,Animal &a);
 };
 #endif

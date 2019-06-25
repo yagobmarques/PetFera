@@ -12,41 +12,38 @@ void iniciarMenu(){
     int option;
     cout << "Bem vindo!" << endl;        
     do{        
-        option = escolherOpcao();       
+        option = escolherOpcao(); 
+        Sistema *s = new Sistema();   
+        SistemaAnimal *sa = new SistemaAnimal(); 
+        string id;  
+        int choice = 0;
         switch(option){
-            case 1: {
-                Sistema *s = new Sistema();
+            case 1:
+                
                 s->cadastrar_Funcionario();
                 delete(s);
                 break;
-            }     
-            case 2: {
-                 Sistema *s = new Sistema();
+            case 2: 
                  s->alterar_Funcionario();
                  delete(s);
                  break;
-            }   
-            case 3:{
-                 Sistema *s = new Sistema();
+              
+            case 3:
                  s->remover_Funcionario();
                  delete(s);
                  break;
-            }        
-            case 4:{
-                 Sistema *s = new Sistema();
+               
+            case 4:
                  s->mostrar_Funcionarios();
                  delete(s);
                  break;
-            }
-            case 5: {
-                SistemaAnimal *sa = new SistemaAnimal();
+            
+            case 5: 
                 sa->cadastrarAnimal();
                 delete(sa);
                 break;
-            }
-            case 6: {
-                string id;
-                SistemaAnimal *sa = new SistemaAnimal();
+            
+            case 6: 
                 cout << "Digite o id do animal";
                 cin >> id;
                 if (isInt(id)){
@@ -56,10 +53,8 @@ void iniciarMenu(){
                 }                
                 delete(sa);
                 break;
-            }
-            case 7: {
-                string id;
-                SistemaAnimal *sa = new SistemaAnimal();
+            
+            case 7: 
                 cout << "Digite o id do animal";
                 cin >> id;
                 if (isInt(id)){
@@ -69,9 +64,7 @@ void iniciarMenu(){
                 }                
                 delete(sa);
                 break;
-            case 8: {
-                int choice;
-                SistemaAnimal *sa = new SistemaAnimal();
+            case 8: 
                 cout<<"digite a opcao de listagem"<<endl;
                 cout<<"digite 1 para listagem por classe"<<endl;
                 cout<<"digite 2 para listagem por veterinario"<<endl;
@@ -88,14 +81,13 @@ void iniciarMenu(){
                 {
                     sa->consultar_animal_por_veterinario();
                 }
+                delete(sa);
                 break;
-
-            }
-
-            }
             default:
                 break;
-        }      
+        }    
+        delete(s);
+        delete(sa);
     }while(option != 0);    
 }
 /**
