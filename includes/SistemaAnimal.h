@@ -1,10 +1,9 @@
-/*
-*
-* @file SistemaAnimal.h
-* @brief Domínio de SistemaAnimal
-* @author Rodolfo Dantas de Oliveira 
-* @since 24/06/2019
-* @date 24/06/2019
+/**
+* @file Sistema.h
+* @brief Domínio de Sistema
+* @author Yago Beserra Marques
+* @since 09/06/2019
+* @date 09/06/2019
 */
 #ifndef SISTEMA_ANIMAL_H
 #define SISTEMA_ANIMAL_H
@@ -13,16 +12,15 @@ using namespace std;
 
 #include <iostream>
 #include <string>
-#include "Veterinario.h"
-#include "Tratador.h"
 #include <fstream>
 #include <cstdio>
-
 #include <map>
-#include "Animal.h"
 #include<sstream>
 #include <stdlib.h>
-
+#include "../utils/stringUtil.h"
+#include "Veterinario.h"
+#include "Tratador.h"
+#include "Animal.h"
 class SistemaAnimal{
 private:
     map<int, Animal> animais;
@@ -35,13 +33,14 @@ public:
     void carregarDados();
     void cadastrarAnimal();
     void salvarAlteracao();
-    void alterarDados(int id, Animal a);
-    void listarAnimais();
-    Animal verificarID(int id);
+    void alterarDados(int id);
+    void deletarAnimal(int id);
+    void listarAnimal();
     void consultar_animal_por_classe();
     void consultar_animal_por_tratador();
     void consultar_animal_por_veterinario();
     Veterinario getVeterinario_por_id(int id);
 	Tratador getTratador_por_id(int id);
+    //sobrecarga de operadores:
 };
 #endif

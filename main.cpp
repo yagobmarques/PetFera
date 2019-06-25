@@ -6,8 +6,7 @@
 * @date 01/05/2019
 */
 #include "main.h"
-int main (int argc, char *argv[]) {
-    SistemaAnimal *a = new SistemaAnimal();
-    //iniciarMenu();
+int main (int argc, char *argv[]) {    
+    iniciarMenu();
     return 0;
 }

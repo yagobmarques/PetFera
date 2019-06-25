@@ -15,11 +15,11 @@ int verificaFlags(string flags)
 }
 int exportaByClasses(string type)
 {
-    ifstream dados("animais.csv");
+    ifstream dados("./base-de-dados/animais.csv");
     string line;
     int commas[10];
     int posi;
-    ofstream filter_dados("auxfilter.csv", ios::app);
+    ofstream filter_dados("./base-de-dados/auxfilter.csv", ios::app);
     while (getline(dados, line))
     {
         posi = 0;
@@ -44,11 +44,11 @@ int exportaByClasses(string type)
 }
 int exportaByVeterinrio(string type)
 {
-    ifstream dados("animais.csv");
+    ifstream dados("./base-de-dados/animais.csv");
     string line;
     int commas[10];
     int posi;
-    ofstream filter_dados("auxfilter.csv", ios::app);
+    ofstream filter_dados("./base-de-dados/auxfilter.csv", ios::app);
     while (getline(dados, line))
     {
         posi = 0;
@@ -71,11 +71,11 @@ int exportaByVeterinrio(string type)
 }
 int exportaByTratador(string type)
 {
-    ifstream dados("animais.csv");
+    ifstream dados("./base-de-dados/animais.csv");
     string line;
     int commas[10];
     int posi;
-    ofstream filter_dados("auxfilter.csv", ios::app);
+    ofstream filter_dados("./base-de-dados/auxfilter.csv", ios::app);
     while (getline(dados, line))
     {
         posi = 0;
@@ -98,7 +98,7 @@ int exportaByTratador(string type)
 }
 int exportaAnimal(string final_arq)
 {
-    ifstream dados("animais.csv");
+    ifstream dados("./base-de-dados/animais.csv");
     ofstream offdados(final_arq);
     string line;
     while (getline(dados, line))
@@ -130,7 +130,7 @@ int main(int argc, char const *argv[])
             return -1;
         }
     }
-    ofstream filter_dados("auxfilter.csv");
+    ofstream filter_dados("./base-de-dados/auxfilter.csv");
     filter_dados.close();
     string flags;
     for (unsigned int j = 2; j < argc - 1; j = j + 2)
@@ -151,11 +151,11 @@ int main(int argc, char const *argv[])
     }
     string line;
     ofstream export_dados(argv[argc-1]);
-    ifstream filter_dados2("auxfilter.csv");
+    ifstream filter_dados2("./base-de-dados/auxfilter.csv");
     while (getline(filter_dados2, line)){
         export_dados<<line<<endl;
     }
-    remove("auxfilter.csv");
+    remove("./base-de-dados/auxfilter.csv");
     export_dados.close();
     filter_dados2.close();
     return 0;
