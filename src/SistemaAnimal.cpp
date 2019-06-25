@@ -298,24 +298,26 @@ void SistemaAnimal::consultar_animal_por_classe()
 }
 void SistemaAnimal::consultar_animal_por_tratador()
 {
-	 int id_dotrata;
+	string aux;	
+ 	int id_dotrata;
 	cout<<"----Bem vindo a consulta de animais por tratador escolhar:  "<<endl;
 	cout<<"digite o id do Tratador"<< endl;
 	cin>>id_dotrata;
 	for(auto it:tratadores)
 	{
-		if(it.first. == id_dotrata)
-			aux = it.second
+		if(it.first == id_dotrata)
+			aux = it.second.getM_nome();
 	}
 	for(auto eita:animais)
 	{
-		if(eita.second.getM_tratador == aux)
+		if(eita.second.getM_tratador() == aux)
 			cout<<eita.second<<endl;	
 
 	}
 }
 void SistemaAnimal::consultar_animal_por_veterinario()
 {
+	string auxiliar;
 	int id_dovet;
 	cout<<"----Bem vindo a consulta de animais por Veterinario: "<<endl;
 	cout<<"digite o id do Veterinario"<< endl;
@@ -323,11 +325,11 @@ void SistemaAnimal::consultar_animal_por_veterinario()
 	for(auto it:veterinarios)
 	{
 		if(it.first == id_dovet)
-			auxiliar = it.second		
+			auxiliar = it.second.getM_nome();		
 	}
 	for(auto loco:animais)
 	{
-		if(loco.second.getM_veterinario == auxiliar)
+		if(loco.second.getM_veterinario() == auxiliar)
 			cout<<loco.second<<endl;
 	
 	}
