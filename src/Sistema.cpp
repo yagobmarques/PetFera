@@ -102,7 +102,7 @@ void Sistema::cadastrar_Veterinario()
 */
 void Sistema::cadastrar_Tratador()
 {
-  ofstream saveDados("./funcionario.csv", ios::app);
+  ofstream saveDados("./base-de-dados/funcionarios.csv", ios::app);
   string respostas = "-1";
   int aux = 0;
   Tratador *t = new Tratador();
@@ -228,7 +228,7 @@ void Sistema::cadastrar_Funcionario()
 */
 void Sistema::remover_Funcionario()
 {
-  ifstream dados("funcionario.csv");
+  ifstream dados("./base-de-dados/funcionarios.csv");
   string escolha = "-1";
   int aux = 0;
   cout << "---- Menu de remoção de um Funcionário ---- \n"
@@ -254,7 +254,7 @@ void Sistema::remover_Funcionario()
   else
   {
     string line;
-    ofstream aux1("aux.csv");
+    ofstream aux1("./base-de-dados/aux.csv");
     int val = 0;
     int aux2 = 0;
     while (getline(dados, line))
@@ -266,8 +266,8 @@ void Sistema::remover_Funcionario()
         aux1 << line << endl;
       }
     }
-    remove("funcionario.csv");
-    rename("aux.csv", "funcionario.csv");
+    remove("./base-de-dados/funcionarios.csv");
+    rename("./base-de-dados/aux.csv", "./base-de-dados/funcionarios.csv");
     aux1.close();
     dados.close();
     delete (s);
@@ -338,7 +338,7 @@ void Sistema::alterar_Funcionario()
 */
 void Sistema::remover_FuncionarioById(int id)
 {
-  ifstream dados("funcionario.csv");
+  ifstream dados("./base-de-dados/funcionarios.csv");
   if (verificarID(id) == 0)
   {
     cout << "Não existe nenhum funcionário com essa ID" << endl;
@@ -346,7 +346,7 @@ void Sistema::remover_FuncionarioById(int id)
   else
   {
     string line;
-    ofstream aux1("aux.csv");
+    ofstream aux1("./base-de-dados/aux.csv");
     int val;
     int aux2;
     while (getline(dados, line))
@@ -358,8 +358,8 @@ void Sistema::remover_FuncionarioById(int id)
         aux1 << line << endl;
       }
     }
-    remove("funcionario.csv");
-    rename("aux.csv", "funcionario.csv");
+    remove("./base-de-dados/funcionarios.csv");
+    rename("./base-de-dados/aux.csv", "./base-de-dados/funcionarios.csv");
     aux1.close();
     dados.close();
   }
