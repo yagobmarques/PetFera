@@ -3,7 +3,7 @@ Pet Fera é uma loja que comercializa animais silvestres com os devidos cuidados
 
 # Programa de exportação
   ## Compilação:
-  ``g++ -o exportar ./Prog_export/main.cpp``
+    ``g++ -o exportar ./Prog_export/main.cpp``
   ## Uso:
     ``./exportar -v <id do veterinario> -t <id do tratador> -c <classe do animal> <arquivo de saida>``
   ## Observações:
