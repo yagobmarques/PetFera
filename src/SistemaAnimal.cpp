@@ -96,6 +96,11 @@ void SistemaAnimal::carregarDados(){
 Veterinario SistemaAnimal::getVeterinario_por_id(int id){
 	return veterinarios.find(id)->second;
 }
+
+Animal verificar_animal_id(int id)
+{	
+
+}
 /**
 * @brief Retorna um Tratador pelo id
   @params id
@@ -256,14 +261,77 @@ void SistemaAnimal::deletarAnimal(int id){
 void SistemaAnimal::listarAnimal(){
     //TO DO
 }
-void SistemaAnimal::consultar_animal_por_classe(string classe){
-    //TO DO
+
+void SistemaAnimal::consultar_animal_por_classe()
+{
+    int choice;
+	cout<<"----Bem vindo ao menu de consulta por classe escolha uma classe:  "<<endl;
+	cout<<"digite 1 para Anfibios"<< endl;
+	cout<<"digite 2 para mamiferos"<<endl;
+	cout<<"digite 3 para Reptils"<<endl;
+	cout<<"digite 4 para Aves"<< endl;
+	cin>>choice;
+	if (choice == 1)
+	{
+		for(auto it:animais)
+		{
+			if(it.second.getM_classe() == "​Amphibia"){
+				cout<<it.second<< endl;
+            }
+
+		}
+	}
+    if (choice == 2)
+	{
+		for(auto it:animais)
+		{
+            if(it.second.getM_classe() == "Mammalia"){
+                cout<<it.second<<endl;
+            }
+        }
+	}
+	if (choice == 3)
+	{
+		for(auto it:animais)
+		{
+            if(it.second.getM_classe() == " ​Reptilia"){
+                cout<<it.second<<endl;
+            }
+        }
+	}
+	if (choice == 4)
+	{
+		for(auto it:animais)
+		{
+			if(it.second.getM_classe() == " ​Aves"){
+				cout<<it.second<<endl; 
+            }
+		}
+	}
 }
-void SistemaAnimal::consultar_animal_por_tratador(int id_tratador){
-    //TO DO
+void SistemaAnimal::consultar_animal_por_tratador()
+{
+	 int id_dotrata;
+	cout<<"----Bem vindo a consulta de animais por tratador escolhar:  "<<endl;
+	cout<<"digite o id do Tratador"<< endl;
+	cin>>id_dotrata;
+	for(auto it:tratadores)
+	{
+		if(it.first == id_dotrata)
+			cout<<it.second<< endl;
+	}
 }
-void SistemaAnimal::consultar_animal_por_veterinario(int id_veterinario){
-    //TO DO
+void SistemaAnimal::consultar_animal_por_veterinario()
+{
+	int id_dovet;
+	cout<<"----Bem vindo a consulta de animais por Veterinario: "<<endl;
+	cout<<"digite o id do Veterinario"<< endl;
+	cin>>id_dovet;
+	for(auto it:veterinarios)
+	{
+		if(it.first == id_dovet)
+			cout<<it.second<< endl;
+	}
 }
 
 SistemaAnimal::SistemaAnimal()

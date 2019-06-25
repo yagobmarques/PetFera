@@ -36,9 +36,9 @@ public:
     void alterarDados(int id);
     void deletarAnimal(int id);
     void listarAnimal();
-    void consultar_animal_por_classe(string classe);
-    void consultar_animal_por_tratador(int id_tratador);
-    void consultar_animal_por_veterinario(int id_veterinario);
+    void consultar_animal_por_classe();
+    void consultar_animal_por_tratador();
+    void consultar_animal_por_veterinario();
     Veterinario getVeterinario_por_id(int id);
 	Tratador getTratador_por_id(int id);
     //sobrecarga de operadores:

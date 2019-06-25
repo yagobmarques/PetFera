@@ -1,4 +1,18 @@
 #include "../includes/Animal.h"
+using namespace std;
+ ostream& operator<< (ostream &o,Animal* a)
+ {
+	 o<<"id: "<<a->getM_id()<<"| classe: "
+	 <<a->getM_classe()<<" | Nome: "
+	 <<a->getM_nome()<<"| Nome cientifico: "
+	 <<a->getM_nome_cientifico()<<"| Sexo: "
+	 <<a->getM_sexo()<<"| Tamanho: "
+	 <<a->getM_tamanho()<<"| Dieta: "
+	 <<a->getM_dieta()<<"| Nome de Batismo: "	 
+	 <<a->getM_nome_batismo()<<"| Veterinario: "
+	 <<a->getM_veterinario()<<"| Tratador: "
+	 <<a->getM_tratador()<< endl;
+ }
 
 int Animal::getM_id()
 {
