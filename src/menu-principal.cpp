@@ -38,6 +38,39 @@ void iniciarMenu(){
                  delete(s);
                  break;
             }
+            case 5: {
+                SistemaAnimal *sa = new SistemaAnimal();
+                sa->cadastrarAnimal();
+                delete(sa);
+                break;
+            }
+            case 6: {
+                string id;
+                SistemaAnimal *sa = new SistemaAnimal();
+                cout << "Digite o id do animal";
+                cin >> id;
+                if (isInt(id)){
+                    sa->alterarDados(stoi(id));
+                } else {
+                    cout <<RED<< "Entrada inválida" <<RESET<<endl;
+                }                
+                delete(sa);
+                break;
+            }
+            case 7: {
+                string id;
+                SistemaAnimal *sa = new SistemaAnimal();
+                cout << "Digite o id do animal";
+                cin >> id;
+                if (isInt(id)){
+                    sa->deletarAnimal(stoi(id));
+                } else {
+                    cout <<RED<< "Entrada inválida" <<RESET<<endl;
+                }                
+                delete(sa);
+                break;
+
+            }
             default:
                 break;
         }      

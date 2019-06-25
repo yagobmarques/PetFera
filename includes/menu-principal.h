@@ -13,6 +13,7 @@
 #include <cstdlib>
 #include <set>
 #include "Sistema.h"
+#include "SistemaAnimal.h"
 #include "../utils/stringUtil.h"
 #include "../utils/colors.h"
 using namespace std;
