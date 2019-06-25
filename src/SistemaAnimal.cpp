@@ -168,7 +168,9 @@ void SistemaAnimal::salvarAlteracao(){
 	arquivo.close();
 }
 void SistemaAnimal::listarAnimal(){
-    //TO DO
+    for (auto e:animais){ 
+	    cout<<e.second<<endl; 
+    }
 }
 void SistemaAnimal::alterarDados(int id, Animal a){
     //TO DO
