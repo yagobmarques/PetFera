@@ -93,7 +93,7 @@ int escolherOpcao(){
     cout << "7 - deletar animal" << endl;
     cout << "8 - listar animais" << endl;
     cout << "0 - sair"<<endl;
-    cin >> op;
+    getline(cin, op);
    
     if(isInt(op)){
         const bool opValida = options.find(stoi(op)) != options.end();
