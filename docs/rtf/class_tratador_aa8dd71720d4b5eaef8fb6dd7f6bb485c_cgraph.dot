@@ -1,0 +1,35 @@
+digraph "Tratador::operator="
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node10 [label="Tratador::operator=",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node10 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="Funcionario::getM_cpf",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_funcionario.html#afe90ceedae9ae30ba014aa43e0556744"];
+  Node10 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="Funcionario::getM_especialidade",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_funcionario.html#ad04c633c1d9c9d0c0e794bad0b4d2adf"];
+  Node10 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="Funcionario::getM_fator_rh",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_funcionario.html#ab34e46ef33b0f2918bcf129772ca28fb"];
+  Node10 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="Funcionario::getM_id",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_funcionario.html#a28862fda8ac97bae17caa6c6d8659ca8"];
+  Node10 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="Funcionario::getM_idade",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_funcionario.html#aa070eee31dbde8832868518a0f0d1436"];
+  Node10 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="Funcionario::getM_nome",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_funcionario.html#abfafc40b693e6bf765998a78d23b2e58"];
+  Node10 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="Funcionario::getM_tipo\l_sanguineo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_funcionario.html#a43899ba443365c1e3b5e78e37a8ccd85"];
+  Node10 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="Funcionario::setM_cpf",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_funcionario.html#a34df8d7817934b39bf55862532f222f6"];
+  Node10 -> Node19 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="Funcionario::setM_especialidade",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_funcionario.html#a19534737bd7bf7f4b308bffebdfaa9cd"];
+  Node10 -> Node20 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node20 [label="Funcionario::setM_fator_rh",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_funcionario.html#a96f023d8dbc4b2ee7ead46a1cb91e9a2"];
+  Node10 -> Node21 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node21 [label="Funcionario::setM_id",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_funcionario.html#a9918c88dd2985cb8643f28407e5f0236"];
+  Node10 -> Node22 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node22 [label="Funcionario::setM_idade",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_funcionario.html#a94d479f6870613825b0d6fb1b914bac0"];
+  Node10 -> Node23 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node23 [label="Funcionario::setM_nome",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_funcionario.html#a85a4128d2eae877de922cd3259054e43"];
+  Node10 -> Node24 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node24 [label="Funcionario::setM_tipo\l_sanguineo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_funcionario.html#aaa528174dd7a3e3d3d7dfd5a20455a34"];
+}

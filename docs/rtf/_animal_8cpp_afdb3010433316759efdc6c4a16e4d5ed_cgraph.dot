@@ -1,0 +1,13 @@
+digraph "operator&gt;&gt;"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="operator\>\>",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node0 -> Node1 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="Animal::setM_id",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_animal.html#a97ccb0c2052747c4b7eb8cd5dbed38e4"];
+  Node0 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Animal::setM_sexo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_animal.html#a55bffd686425e75226a6a326d448262e"];
+  Node0 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Animal::setM_tamanho",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_animal.html#a696987a298549b993e2a7adfaf26aa1c"];
+}

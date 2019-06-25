@@ -1,0 +1,25 @@
+var annotated_dup =
+[
+    [ "Anfibio", "class_anfibio.html", "class_anfibio" ],
+    [ "AnfibioExotico", "class_anfibio_exotico.html", "class_anfibio_exotico" ],
+    [ "AnfibioNativo", "class_anfibio_nativo.html", "class_anfibio_nativo" ],
+    [ "Animal", "class_animal.html", "class_animal" ],
+    [ "AnimalExotico", "class_animal_exotico.html", "class_animal_exotico" ],
+    [ "AnimalNativo", "class_animal_nativo.html", "class_animal_nativo" ],
+    [ "AnimalSilvestre", "class_animal_silvestre.html", "class_animal_silvestre" ],
+    [ "Ave", "class_ave.html", "class_ave" ],
+    [ "AveExotica", "class_ave_exotica.html", "class_ave_exotica" ],
+    [ "AveNativa", "class_ave_nativa.html", "class_ave_nativa" ],
+    [ "Data", "class_data.html", "class_data" ],
+    [ "Funcionario", "class_funcionario.html", "class_funcionario" ],
+    [ "Mamifero", "class_mamifero.html", "class_mamifero" ],
+    [ "MamiferoExotico", "class_mamifero_exotico.html", "class_mamifero_exotico" ],
+    [ "MamiferoNativo", "class_mamifero_nativo.html", "class_mamifero_nativo" ],
+    [ "Reptil", "class_reptil.html", "class_reptil" ],
+    [ "ReptilExotico", "class_reptil_exotico.html", "class_reptil_exotico" ],
+    [ "ReptilNativo", "class_reptil_nativo.html", "class_reptil_nativo" ],
+    [ "Sistema", "class_sistema.html", "class_sistema" ],
+    [ "SistemaAnimal", "class_sistema_animal.html", "class_sistema_animal" ],
+    [ "Tratador", "class_tratador.html", "class_tratador" ],
+    [ "Veterinario", "class_veterinario.html", "class_veterinario" ]
+];

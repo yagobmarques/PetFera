@@ -1,0 +1,14 @@
+digraph "Sistema::cadastrar_Tratador"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node81 [label="Sistema::cadastrar\l_Tratador",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node81 -> Node82 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node82 [label="Sistema::cadastrar\l_Funcionario",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sistema.html#a09f67281b0cce5adc53ca5ba61889b1a",tooltip="Sistema de cadastro de funcionário. "];
+  Node82 -> Node83 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node83 [label="Sistema::alterar_Funcionario",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sistema.html#aa22c5007567dacef79a26e8ec02dd3f2",tooltip="Altera os dados de un funcionário. "];
+  Node83 -> Node84 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node84 [label="iniciarMenu",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$menu-principal_8h.html#a2311af40e30459172b0fa90ac0bf6030",tooltip="inicializa o menu do sistema "];
+  Node82 -> Node84 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

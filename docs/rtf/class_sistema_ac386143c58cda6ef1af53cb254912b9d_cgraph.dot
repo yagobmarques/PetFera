@@ -1,0 +1,11 @@
+digraph "Sistema::remover_Funcionario"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node114 [label="Sistema::remover_Funcionario",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node114 -> Node115 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node115 [label="Sistema::Sistema",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sistema.html#a815b07845ef6b03247b239333fe75e28"];
+  Node114 -> Node116 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node116 [label="Sistema::verificarID",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sistema.html#a1d9ef2a50059785ec0d5d09e89a20b4f",tooltip="Checa se id do funcionário já existe. "];
+}

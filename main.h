@@ -10,7 +10,7 @@
 
 #include <iostream>
 #include <cstdlib>
-#include "./menu-principal.h"
+#include "./includes/menu-principal.h"
 #include "./includes/SistemaAnimal.h"
 
 #endif

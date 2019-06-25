@@ -1,10 +1,10 @@
-#include "../includes/SistemaAnimal.h
+#include "../includes/SistemaAnimal.h"
 void SistemaAnimal::carregarDados(){
 	/*for (auto e:animais){
 		cout<<e.first<<"\t"<<e.second.getM_nome()<<endl;	
 	}*/
 	//carregando os dados cadastrados de funcionarios
-    ifstream arquivoFuncionario("./funcionarios.csv");
+    ifstream arquivoFuncionario("./base-de-dados/funcionarios.csv");
 	string linha;
 	while (getline(arquivoFuncionario, linha)) {
       stringstream linestream(linha);
@@ -53,7 +53,7 @@ void SistemaAnimal::carregarDados(){
 	arquivoFuncionario.close();
 	//carregando os dados cadastrados de animais
   ifstream arquivoAnimal;
-  arquivoAnimal.open ("./src/animais.csv");
+  arquivoAnimal.open ("./base-de-dados/animais.csv");
 	string line;
   if (!arquivoAnimal)
     cout<<"não tem arquivo"<<endl;
@@ -73,7 +73,6 @@ void SistemaAnimal::carregarDados(){
 			animais.insert(pair<int, Animal>(dados.getM_id(), dados));
 	}
 	arquivoAnimal.close();
-    
 	/*cout<<"Animais:"<<endl;
 	for (auto e:animais){
 		Veterinario v = e.second.getM_veterinario();
@@ -89,12 +88,25 @@ void SistemaAnimal::carregarDados(){
 		cout<<e.first<<"\t"<<e.second.getM_nome()<<endl;
 	} */
 }
+/**
+* @brief Retorna um veterinario pelo id
+  @params id
+  @return Veterinario
+*/
 Veterinario SistemaAnimal::getVeterinario_por_id(int id){
 	return veterinarios.find(id)->second;
 }
+/**
+* @brief Retorna um Tratador pelo id
+  @params id
+  @return Tratador
+*/
 Tratador SistemaAnimal::getTratador_por_id(int id){
 	return tratadores.find(id)->second;
 }
+/**
+* @brief Cadastra um animal
+*/
 void SistemaAnimal::cadastrarAnimal(){
 
 	Animal *a = new Animal();
@@ -125,23 +137,36 @@ void SistemaAnimal::cadastrarAnimal(){
 	getline(cin, respostas);
 	a->setM_nome_batismo(respostas);
 	int id_veterinario;
-	cout<<"Digite o id do veterinário (0 caso não exista):"<<endl;
-	cin>>id_veterinario;
-	if(id_veterinario>0){
-		a->setM_veterinario(getVeterinario_por_id(id_veterinario));
-	}
+    do{
+        cout<<"Digite o id do veterinário (0 caso não exista):"<<endl;
+        cin>>id_veterinario;
+        if(id_veterinario<=0) break;
+        if(veterinarios.find(id_veterinario)!=veterinarios.end()){
+            a->setM_veterinario(getVeterinario_por_id(id_veterinario));
+        }else{
+            cout<<"ID de veterinário inválido"<<endl;
+        }
+    }while(veterinarios.find(id_veterinario)==veterinarios.end());
 	int id_tratador;
-	cout<<"Digite o id do tratador (0 caso não exista):"<<endl;
-	cin>>id_tratador;
-	if(id_tratador>0){
-		a->setM_tratador(getTratador_por_id(id_tratador));
-	}
-	animais.insert(pair<int, Animal>(maior_id, *a));
+    do{
+        cout<<"Digite o id do tratador (0 caso não exista):"<<endl;
+        cin>>id_tratador;
+        if(id_tratador<=0) break;
+        if(id_tratador>0 && tratadores.find(id_tratador)!=tratadores.end()){
+            a->setM_tratador(getTratador_por_id(id_tratador));
+        }else{
+            cout<<"ID de tratador inválido"<<endl;
+        }
+    }while(tratadores.find(id_tratador)==tratadores.end());
+    animais.insert(pair<int, Animal>(maior_id, *a));
     salvarAlteracao();
 }
+/**
+* @brief Salva as alterações na base de dados de animal
+*/
 void SistemaAnimal::salvarAlteracao(){
     ofstream arquivo;
-    arquivo.open ("./src/animais.csv");
+    arquivo.open ("./base-de-dados/animais.csv");
     if (!arquivo) cout<<"não tem arquivo"<<endl;
 	for (auto e:animais){
 		arquivo<<e.first<<";"<<e.second.getM_classe()<<";"<<e.second.getM_nome()<<";"<<e.second.getM_nome_cientifico()<<";"<<e.second.getM_sexo()<<";"<<e.second.getM_tamanho()<<";"<<e.second.getM_dieta()<<";"<<e.second.getM_nome_batismo();
@@ -161,40 +186,75 @@ void SistemaAnimal::salvarAlteracao(){
 	}
 	arquivo.close();
 }
+/**
+* @brief Altera os dados de um animal
+  @params id do animal
+*/
+void SistemaAnimal::alterarDados(int id){
+    //TO DO
+    auto a=animais.find(id);
+    if(a!=animais.end()){
+        string respostas = "-1";
+        double tamanho;
+        cout<<"Digite a classe:"<<endl;
+        getline(cin, respostas);
+        a->second.setM_classe(respostas);
+        cout<<"Digite o nome:"<<endl;
+        getline(cin, respostas);
+        a->second.setM_nome(respostas);
+        cout<<"Digite o nome cientifico:"<<endl;
+        getline(cin, respostas);
+        a->second.setM_nome_cientifico(respostas);
+        cout<<"Digite o sexo (F ou M):"<<endl;
+        getline(cin, respostas);
+        a->second.setM_sexo(respostas[0]);
+        cout<<"Digite o tamanho:"<<endl;
+        getline(cin, respostas);
+        tamanho=stod(respostas);
+        a->second.setM_tamanho(tamanho);
+        cout<<"Digite a dieta:"<<endl;
+        getline(cin, respostas);
+        a->second.setM_dieta(respostas);
+        cout<<"Digite o nome de batismo:"<<endl;
+        getline(cin, respostas);
+        a->second.setM_nome_batismo(respostas);
+        int id_veterinario;
+        do{
+            cout<<"Digite o id do veterinário (0 caso não exista):"<<endl;
+            cin>>id_veterinario;
+            if(id_veterinario<=0) break;
+            if(veterinarios.find(id_veterinario)!=veterinarios.end()){
+                a->second.setM_veterinario(getVeterinario_por_id(id_veterinario));
+            }else{
+                cout<<"ID de veterinário inválido"<<endl;
+            }
+        }while(veterinarios.find(id_veterinario)==veterinarios.end());
+        int id_tratador;
+        do{
+            cout<<"Digite o id do tratador (0 caso não exista):"<<endl;
+            cin>>id_tratador;
+            if(id_tratador<=0) break;
+            if(tratadores.find(id_tratador)!=tratadores.end()){
+                a->second.setM_tratador(getTratador_por_id(id_tratador));
+            }else{
+                cout<<"ID de tratador inválido"<<endl;
+            }
+        }while(tratadores.find(id_tratador)==tratadores.end());
+    }else{
+        cout<<"Animal não encontrado"<<endl;
+    }
+    salvarAlteracao();
+}
+/**
+* @brief Deleta um animal
+  @params id do animal
+*/
+void SistemaAnimal::deletarAnimal(int id){
+    animais.erase(id);
+    salvarAlteracao();
+}
 void SistemaAnimal::listarAnimal(){
     //TO DO
-}
-void SistemaAnimal::alterarDados(int id, Animal a){
-    //TO DO
-  {
-  string escolha = "-1";
-  int aux = -1;
-  cout << "---- Menu de alteração do animal ---- \n"
-       << endl;
-  do
-  {
-    try
-    {
-      cout << "Entre com a ID do animal: " << endl;
-      getline(cin, escolha);
-      aux = stoi(escolha);
-    }
-    catch (const std::exception &e)
-    {
-      aux = -1;
-    }
-  } while (aux == -1);
-  if (verificarID(aux) == 1)
-  {
-    remover_AnimalById(aux);
-    cout << "Agora, recadastre o animal com os seus devidos atributos" << endl;
-    cadastrar_Animal();
-  }
-  else
-  {
-    cout << "Id inválido" << endl;
-  }
-    salvarAlteracao();
 }
 void SistemaAnimal::consultar_animal_por_classe(string classe){
     //TO DO
@@ -205,11 +265,11 @@ void SistemaAnimal::consultar_animal_por_tratador(int id_tratador){
 void SistemaAnimal::consultar_animal_por_veterinario(int id_veterinario){
     //TO DO
 }
+
 SistemaAnimal::SistemaAnimal()
 {
     carregarDados();
 }
 SistemaAnimal::~SistemaAnimal()
 {
-
 }

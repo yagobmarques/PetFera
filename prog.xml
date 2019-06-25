@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+
+<valgrindoutput>
+
+<protocolversion>4</protocolversion>
+<protocoltool>memcheck</protocoltool>
+
+<preamble>
+  <line>Memcheck, a memory error detector</line>
+  <line>Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.</line>
+  <line>Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info</line>
+  <line>Command: ./petfera</line>
+</preamble>
+
+<pid>8372</pid>
+<ppid>2756</ppid>
+<tool>memcheck</tool>
+
+<args>
+  <vargv>
+    <exe>/usr/bin/valgrind.bin</exe>
+    <arg>--leak-check=yes</arg>
+    <arg>--xml=yes</arg>
+    <arg>--xml-file=prog.xml</arg>
+  </vargv>
+  <argv>
+    <exe>./petfera</exe>
+  </argv>
+</args>
+
+<status>
+  <state>RUNNING</state>
+  <time>00:00:00:00.035 </time>
+</status>
+
+<fatal_signal>
+  <tid>1</tid>
+  <signo>6</signo>
+  <signame>SIGABRT</signame>
+  <sicode>-6</sicode>
+  <stack>
+    <frame>
+      <ip>0x541BE97</ip>
+      <obj>/lib/x86_64-linux-gnu/libc-2.27.so</obj>
+      <fn>raise</fn>
+      <dir>/build/glibc-OTsEL5/glibc-2.27/signal/../sysdeps/unix/sysv/linux</dir>
+      <file>raise.c</file>
+      <line>51</line>
+    </frame>
+    <frame>
+      <ip>0x541D800</ip>
+      <obj>/lib/x86_64-linux-gnu/libc-2.27.so</obj>
+      <fn>abort</fn>
+      <dir>/build/glibc-OTsEL5/glibc-2.27/stdlib</dir>
+      <file>abort.c</file>
+      <line>79</line>
+    </frame>
+    <frame>
+      <ip>0x4EC8956</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25</obj>
+    </frame>
+    <frame>
+      <ip>0x4ECEAB5</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25</obj>
+    </frame>
+    <frame>
+      <ip>0x4ECEAF0</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25</obj>
+      <fn>std::terminate()</fn>
+    </frame>
+    <frame>
+      <ip>0x4ECED23</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25</obj>
+      <fn>__cxa_throw</fn>
+    </frame>
+    <frame>
+      <ip>0x4ECA7E2</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25</obj>
+    </frame>
+    <frame>
+      <ip>0x113B4F</ip>
+      <obj>/home/felipekjr/Documentos/PetFera/petfera</obj>
+    </frame>
+    <frame>
+      <ip>0x5B84B47</ip>
+    </frame>
+    <frame>
+      <ip>0x5B84BE7</ip>
+    </frame>
+    <frame>
+      <ip>0x9FFFFFFFFFFFFFFF</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFECDF</ip>
+    </frame>
+  </stack>
+</fatal_signal>
+
+
+<status>
+  <state>FINISHED</state>
+  <time>00:00:00:06.929 </time>
+</status>
+
+<error>
+  <unique>0x4</unique>
+  <tid>1</tid>
+  <kind>Leak_PossiblyLost</kind>
+  <xwhat>
+    <text>144 bytes in 1 blocks are possibly lost in loss record 5 of 21</text>
+    <leakedbytes>144</leakedbytes>
+    <leakedblocks>1</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x4C2FB0F</ip>
+      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>malloc</fn>
+    </frame>
+    <frame>
+      <ip>0x4ECD8EF</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25</obj>
+      <fn>__cxa_allocate_exception</fn>
+    </frame>
+    <frame>
+      <ip>0x4EF70C2</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25</obj>
+      <fn>std::__throw_invalid_argument(char const*)</fn>
+    </frame>
+    <frame>
+      <ip>0x113B4F</ip>
+      <obj>/home/felipekjr/Documentos/PetFera/petfera</obj>
+    </frame>
+    <frame>
+      <ip>0x5B84B47</ip>
+    </frame>
+    <frame>
+      <ip>0x5B84BE7</ip>
+    </frame>
+    <frame>
+      <ip>0x9FFFFFFFFFFFFFFF</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFECDF</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFECDF</ip>
+    </frame>
+    <frame>
+      <ip>0x1</ip>
+    </frame>
+    <frame>
+      <ip>0x6172</ip>
+    </frame>
+  </stack>
+</error>
+
+<errorcounts>
+</errorcounts>
+
+<suppcounts>
+</suppcounts>
+
+</valgrindoutput>
+

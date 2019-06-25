@@ -1,9 +1,14 @@
 #include "../includes/Sistema.h"
+/**
+* @brief Checa se id do funcionário já existe
+* @param id
+* @return 1 se existe, 0 se não;
+*/
 int Sistema::verificarID(int id)
 {
   int aux = 0;
   int val = 0;
-  ifstream dadosFuncionarios("./funcionario.csv");
+  ifstream dadosFuncionarios("./base-de-dados/funcionario.csv");
   string line;
   while (getline(dadosFuncionarios, line))
   {
@@ -18,9 +23,13 @@ int Sistema::verificarID(int id)
   dadosFuncionarios.close();
   return 0;
 }
+
+/**
+* @brief Cadastra um veterinário
+*/
 void Sistema::cadastrar_Veterinario()
 {
-  ofstream saveDados("./funcionario.csv", ios::app);
+  ofstream saveDados("./base-de-dados/funcionario.csv", ios::app);
   string respostas = "-1";
   int aux = 0;
   Veterinario *v = new Veterinario();
@@ -86,6 +95,11 @@ void Sistema::cadastrar_Veterinario()
   delete (v);
   saveDados.close();
 }
+
+
+/**
+* @brief Cadastra um tratador
+*/
 void Sistema::cadastrar_Tratador()
 {
   ofstream saveDados("./funcionario.csv", ios::app);
@@ -167,6 +181,10 @@ void Sistema::cadastrar_Tratador()
   delete (t);
   saveDados.close();
 }
+
+/**
+* @brief Sistema de cadastro de funcionário
+*/
 void Sistema::cadastrar_Funcionario()
 {
   string escolha = "-1"; /**< Variável de escolha */
@@ -205,6 +223,9 @@ void Sistema::cadastrar_Funcionario()
     }
   }
 }
+/**
+* @brief Remove um funcionário
+*/
 void Sistema::remover_Funcionario()
 {
   ifstream dados("funcionario.csv");
@@ -225,7 +246,7 @@ void Sistema::remover_Funcionario()
       aux = -1000;
     }
   } while (aux == -1000);
-  Sistema *s  = new Sistema();
+  Sistema *s = new Sistema();
   if (s->verificarID(aux) == 0)
   {
     cout << "Não existe nenhum funcionário com essa ID" << endl;
@@ -234,7 +255,7 @@ void Sistema::remover_Funcionario()
   {
     string line;
     ofstream aux1("aux.csv");
-    int val =0;
+    int val = 0;
     int aux2 = 0;
     while (getline(dados, line))
     {
@@ -249,9 +270,13 @@ void Sistema::remover_Funcionario()
     rename("aux.csv", "funcionario.csv");
     aux1.close();
     dados.close();
-    delete(s);
+    delete (s);
   }
 }
+
+/**
+* @brief Lista todos os funcionários
+*/
 void Sistema::mostrar_Funcionarios()
 {
   ifstream dados("funcionario.csv");
@@ -284,82 +309,10 @@ void Sistema::mostrar_Funcionarios()
   }
   dados.close();
 }
-void Sistema::management_Funcionario()
-{
-  Sistema *s = new Sistema();
-  string escolha = "-1"; /**< Variável de escolha */
-  int aux;               /**< Variavel para auxiliar no bloco try catch */
-  while (escolha != "0")
-  {
-    cout << "---- Menu de manegement de um Funcionário ---- \n"
-         << endl;
-    cout << "1 - Cadastrar Funcionário" << endl;
-    cout << "2 - Remover Funcionário" << endl;
-    cout << "3 - Alterar dados de um Funcionário" << endl;
-    cout << "4 - Mostrar Funcionários" << endl;
-    cout << "0 - Sair" << endl;
-    cout << "Digite: ";
-    try
-    {
-      getline(cin, escolha);
-      aux = std::stoi(escolha);
-    }
-    catch (const std::exception &e)
-    {
-      aux = -1;
-    }
-    cout << endl;
-    switch (aux)
-    {
-    case 1:
-      s->cadastrar_Funcionario();
-      break;
-    case 2:
-      s->remover_Funcionario();
-      break;
-    case 3:
-      s->alterar_Funcionario();
-      break;
-    case 4:
-      s->mostrar_Funcionarios();
-      break;
-    case 0:
-      break;
-    default:
-      cout << "Nenhum valor correspondente" << endl;
-      break;
-    }
-  }
-  delete(s);
-}
-void Sistema::remover_FuncionarioById(int id)
-{
-  ifstream dados("funcionario.csv");
-  if (verificarID(id) == 0)
-  {
-    cout << "Não existe nenhum funcionário com essa ID" << endl;
-  }
-  else
-  {
-    string line;
-    ofstream aux1("aux.csv");
-    int val;
-    int aux2;
-    while (getline(dados, line))
-    {
-      aux2 = line.find(";");
-      val = std::stoi(line.substr(0, aux2));
-      if (val != id)
-      {
-        aux1 << line << endl;
-      }
-    }
-    remove("funcionario.csv");
-    rename("aux.csv", "funcionario.csv");
-    aux1.close();
-    dados.close();
-  }
-}
+
+/**
+* @brief Altera os dados de un funcionário
+*/
 void Sistema::alterar_Funcionario()
 {
   string escolha = "-1";
@@ -390,6 +343,40 @@ void Sistema::alterar_Funcionario()
     cout << "Id inválido" << endl;
   }
 }
+/**
+* @brief Remove um funcionário pelo id
+*/
+void Sistema::remover_FuncionarioById(int id)
+{
+  ifstream dados("funcionario.csv");
+  if (verificarID(id) == 0)
+  {
+    cout << "Não existe nenhum funcionário com essa ID" << endl;
+  }
+  else
+  {
+    string line;
+    ofstream aux1("aux.csv");
+    int val;
+    int aux2;
+    while (getline(dados, line))
+    {
+      aux2 = line.find(";");
+      val = std::stoi(line.substr(0, aux2));
+      if (val != id)
+      {
+        aux1 << line << endl;
+      }
+    }
+    remove("funcionario.csv");
+    rename("aux.csv", "funcionario.csv");
+    aux1.close();
+    dados.close();
+  }
+}
+
+
+
 Sistema::Sistema()
 {
 }
