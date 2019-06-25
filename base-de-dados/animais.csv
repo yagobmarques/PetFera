@@ -1,5 +1,3 @@
-1;;fe;23;F;0;fef;fefe;1;1
-2;Reptilia;JACARE;JACARAIO;F;2.5;CARNE;JACA;1;1
 3;Ave;CANARIO;AVARARIO;M;0.25;VEGETAL;CANA;0;1
 4;Mammalia;homo_sapiens;sapiens;F;1.67;CARNE;CAVERNA;1;0
 5;Ave;teste;teste;M;1.5;MILHO;TESTE;1;1
@@ -7,3 +5,7 @@
 7;testefile;testefile;testefile;F;1.6;testefile;testefile;1;1
 8;;felfe;231;1;0;f;f;0;0
 9;aba;fe;efe;F;1;ferfge;fefe;0;0
+10;Anfibio;Cachorro;lala;F;1;fefelfl;felfelfel;0;0
+11;Ave;arara;araris;F;1;addll;felfel;1;1
+12;Anfibio;arara;araris;F;1;sasas;felfel;1;1
+13;Aves;felfel;fe;f;1;fefe;fefe;1;1
