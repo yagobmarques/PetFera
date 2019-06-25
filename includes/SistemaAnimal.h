@@ -41,6 +41,7 @@ public:
     void consultar_animal_por_veterinario();
     Veterinario getVeterinario_por_id(int id);
 	Tratador getTratador_por_id(int id);
+    void consultar_animal_por_classe_aux(string d);
     //sobrecarga de operadores:
 };
 #endif
