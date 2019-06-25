@@ -23,13 +23,12 @@ using namespace std;
 #include "Animal.h"
 class SistemaAnimal{
 private:
-    map<int, Animal> animais;
+     map<int, Animal> animais;
 	map<int, Veterinario> veterinarios;
 	map<int, Tratador> tratadores;
 public:
     SistemaAnimal();
     ~SistemaAnimal();
-
     void carregarDados();
     void cadastrarAnimal();
     void salvarAlteracao();

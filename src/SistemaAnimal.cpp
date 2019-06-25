@@ -1,4 +1,5 @@
 #include "../includes/SistemaAnimal.h"
+using namespace std;
 void SistemaAnimal::carregarDados(){
 	/*for (auto e:animais){
 		cout<<e.first<<"\t"<<e.second.getM_nome()<<endl;	
@@ -97,10 +98,7 @@ Veterinario SistemaAnimal::getVeterinario_por_id(int id){
 	return veterinarios.find(id)->second;
 }
 
-Animal verificar_animal_id(int id)
-{	
 
-}
 /**
 * @brief Retorna um Tratador pelo id
   @params id
@@ -268,10 +266,9 @@ void SistemaAnimal::deletarAnimal(int id){
 }
 void consultar_animal_por_classe_aux(string d)
 {
-	for(auto it:animais)
-		{
-			if(it.second.getM_classe() == d){
-				cout<<it.second<< endl;
+	for(auto epa:animais){
+			if(epa.second.getM_classe() == d){
+				cout<<epa.second<< endl;
             }
 
 		}

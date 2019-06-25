@@ -69,6 +69,28 @@ void iniciarMenu(){
                 }                
                 delete(sa);
                 break;
+            case 8: {
+                int choice;
+                SistemaAnimal *sa = new SistemaAnimal();
+                cout<<"digite a opcao de listagem"<<endl;
+                cout<<"digite 1 para listagem por classe"<<endl;
+                cout<<"digite 2 para listagem por veterinario"<<endl;
+                cout<<"digite 3  para listagem por tratador"<<endl;
+                if(choice == 1)
+                {
+                    sa->consultar_animal_por_classe();
+                }
+                if(choice == 3)
+                {
+                    sa->consultar_animal_por_tratador();
+                }
+                if(choice == 2)
+                {
+                    sa->consultar_animal_por_veterinario();
+                }
+                break;
+
+            }
 
             }
             default:
