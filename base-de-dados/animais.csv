@@ -1,4 +1,4 @@
-1;Mammalia;Leao;Panthera;M;1.5;Carne;Simba;1;1
+1;;fe;23;F;0;fef;fefe;1;1
 2;Reptilia;JACARE;JACARAIO;F;2.5;CARNE;JACA;1;1
 3;Ave;CANARIO;AVARARIO;M;0.25;VEGETAL;CANA;0;1
 4;Mammalia;homo_sapiens;sapiens;F;1.67;CARNE;CAVERNA;1;0
@@ -6,3 +6,4 @@
 6;Mammalia;TESTE_ALTERACAO;TESTE;M;1.2;FRANGO;APELIDO;1;1
 7;testefile;testefile;testefile;F;1.6;testefile;testefile;1;1
 8;;felfe;231;1;0;f;f;0;0
+9;aba;fe;efe;F;1;ferfge;fefe;0;0
