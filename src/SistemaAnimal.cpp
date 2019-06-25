@@ -251,15 +251,20 @@ void SistemaAnimal::alterarDados(int id){
     salvarAlteracao();
 }
 /**
+* @brief Lista todos os animais
+*/
+void SistemaAnimal::listarAnimal(){
+    for (auto e:animais){ 
+	    cout<<e.second<<endl; 
+    }
+}
+/**
 * @brief Deleta um animal
   @params id do animal
 */
 void SistemaAnimal::deletarAnimal(int id){
     animais.erase(id);
     salvarAlteracao();
-}
-void SistemaAnimal::listarAnimal(){
-    //TO DO
 }
 
 void SistemaAnimal::consultar_animal_por_classe()
