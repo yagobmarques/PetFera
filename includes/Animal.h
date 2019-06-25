@@ -59,5 +59,7 @@ public:
 
     //sobrecarga de operadores:
 		friend istream& operator>> (istream &is, Animal& animal);
+    friend oistream& operator<< (oistream &o,Animal& animal);
+    
 };
 #endif
