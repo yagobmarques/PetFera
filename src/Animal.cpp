@@ -1,17 +1,18 @@
 #include "../includes/Animal.h"
 using namespace std;
- ostream& operator<< (ostream &o,Animal* a)
+ ostream& operator<< (ostream &o,Animal& a)
  {
-	 o<<"id: "<<a->getM_id()<<"| classe: "
-	 <<a->getM_classe()<<" | Nome: "
-	 <<a->getM_nome()<<"| Nome cientifico: "
-	 <<a->getM_nome_cientifico()<<"| Sexo: "
-	 <<a->getM_sexo()<<"| Tamanho: "
-	 <<a->getM_tamanho()<<"| Dieta: "
-	 <<a->getM_dieta()<<"| Nome de Batismo: "	 
-	 <<a->getM_nome_batismo()<<"| Veterinario: "
-	 <<a->getM_veterinario()<<"| Tratador: "
-	 <<a->getM_tratador()<< endl;
+	 o<<"id: "<<a.getM_id()<<"| classe: ";
+	 o<<a.getM_classe()<<" | Nome: ";
+	 o<<a.getM_nome()<<"| Nome cientifico: ";
+	 o<<a.getM_nome_cientifico()<<"| Sexo: ";
+	 o<<a.getM_sexo()<<"| Tamanho: ";
+	 o<<a.getM_tamanho()<<"| Dieta: ";
+	 o<<a.getM_dieta()<<"| Nome de Batismo: ";	 
+	 o<<a.getM_nome_batismo()<<"| Veterinario: ";
+	 o<<a.getM_veterinario().getM_nome()<<"| Tratador: ";
+	 o<<a.getM_tratador().getM_nome()<< endl;
+	 return o;
  }
 
 int Animal::getM_id()
@@ -114,11 +115,7 @@ void Animal::setM_tratador(Tratador m_tratador)
 // sobrecarga do operador de extração de dados >>
 // istream = input stream
 istream& operator>> (istream &is, Animal& animal){
-	/*string id;
-  getline(is, id, ';');
-	getline(is, animal.m_classe, ';');
-	is>>animal.m_nome_cientifico;
-	animal.setM_id(stoi(id));*/
+
 	
 	string id, tamanho, sexo;
   getline(is, id, ';');
@@ -129,8 +126,7 @@ istream& operator>> (istream &is, Animal& animal){
 	animal.setM_sexo(sexo[0]);
 	getline(is, tamanho, ';');
 	getline(is, animal.m_dieta, ';');
-	//getline(is, animal.m_nome_batismo,';');
-	//getline(is, id_veterinario, ';');
+
 	getline(is,animal.m_nome_batismo,';');
 	try{
 	if(!id.empty()) animal.setM_id(stoi(id));
@@ -139,25 +135,7 @@ istream& operator>> (istream &is, Animal& animal){
     {
       cout << "Id inválido ou existente" << endl;
     }
-	/*is >> animal.m_id;
-		//>> delim
-	is.ignore(2,';');
-	is>> animal.m_classe;
-		//>> delim
-	//is.ignore(1,';');
-	is>> animal.m_nome_cientifico; 
-		//>> delim
-	//is.ignore(1,';');
-	is>> animal.m_sexo; 
-		//>> delim
-	//is.ignore(1,';');
-	is>> animal.m_tamanho; 
-		//>> delim
-	//is.ignore(1,';');
-	is>> animal.m_dieta; 
-		//>> delim
-	//is.ignore(1,';');
-	is>> animal.m_nome_batismo;*/
+
 
   return is;
 }
