@@ -34,6 +34,18 @@ void iniciarMenu(){
                  s->mostrar_Funcionarios();
                  break;
             }
+            case 5:{
+                SistemaAnimal *s = new SistemaAnimal();
+                s->cadastrarAnimal();
+            }
+            case 6:{
+                SistemaAnimal *s = new SistemaAnimal();
+                s->alterarDados();
+            }
+            case 7:{
+                SistemaAnimal *s = new SistemaAnimal();
+                s->
+            }
             default:
                 break;
         }       
