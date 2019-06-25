@@ -71,6 +71,11 @@ void iniciarMenu(){
                 break;
 
             }
+            case 8:{
+                SistemaAnimal *sa = new SistemaAnimal();
+		        sa->listarAnimal();
+            
+            }
             default:
                 break;
         }      
