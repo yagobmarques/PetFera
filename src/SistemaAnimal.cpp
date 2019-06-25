@@ -1,18 +1,7 @@
 #include "../includes/SistemaAnimal.h"
+#include "../includes/Animal.h"
 using namespace std;
-  ostream& operator<< (ostream &o,Animal &a)
- {
-	 o<<"id: "<<a.getM_id()<<"| classe: ";
-	 o<<a.getM_classe()<<" | Nome: ";
-	 o<<a.getM_nome()<<"| Nome cientifico: ";
-	 o<<a.getM_nome_cientifico()<<"| Sexo: ";
-	 o<<a.getM_sexo()<<"| Tamanho: ";
-	 o<<a.getM_tamanho()<<"| Dieta: ";
-	 o<<a.getM_dieta()<<"| Nome de Batismo: ";	 
-	 o<<a.getM_nome_batismo()<<"| Veterinario: ";
-	 o<<a.getM_veterinario()<<"| Tratador: ";
-	 o<<a.getM_tratador()<< endl;
- }
+ 
 void SistemaAnimal::carregarDados(){
 	/*for (auto e:animais){
 		cout<<e.first<<"\t"<<e.second.getM_nome()<<endl;	
