@@ -266,7 +266,17 @@ void SistemaAnimal::deletarAnimal(int id){
     animais.erase(id);
     salvarAlteracao();
 }
+void consultar_animal_por_classe_aux(string d)
+{
+	for(auto it:animais)
+		{
+			if(it.second.getM_classe() == d){
+				cout<<it.second<< endl;
+            }
 
+		}
+
+}
 void SistemaAnimal::consultar_animal_por_classe()
 {
     int choice;
@@ -277,42 +287,14 @@ void SistemaAnimal::consultar_animal_por_classe()
 	cout<<"digite 4 para Aves"<< endl;
 	cin>>choice;
 	if (choice == 1)
-	{
-		for(auto it:animais)
-		{
-			if(it.second.getM_classe() == "​Amphibia"){
-				cout<<it.second<< endl;
-            }
-
-		}
-	}
-    if (choice == 2)
-	{
-		for(auto it:animais)
-		{
-            if(it.second.getM_classe() == "Mammalia"){
-                cout<<it.second<<endl;
-            }
-        }
-	}
+		this->consultar_animal_por_classe_aux("Amphibia");
+	if (choice == 2)
+		this->consultar_animal_por_classe_aux("Mammalia");
 	if (choice == 3)
-	{
-		for(auto it:animais)
-		{
-            if(it.second.getM_classe() == " ​Reptilia"){
-                cout<<it.second<<endl;
-            }
-        }
-	}
+		this->consultar_animal_por_classe_aux("Reptilia");
 	if (choice == 4)
-	{
-		for(auto it:animais)
-		{
-			if(it.second.getM_classe() == " ​Aves"){
-				cout<<it.second<<endl; 
-            }
-		}
-	}
+		this->consultar_animal_por_classe_aux("aves");
+	
 }
 void SistemaAnimal::consultar_animal_por_tratador()
 {
